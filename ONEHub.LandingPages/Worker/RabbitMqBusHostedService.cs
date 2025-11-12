@@ -1,6 +1,5 @@
 ﻿#nullable enable
 using EasyNetQ;
-using ONEHub.LandingPages.Core.Services.Interfaces;
 using ONEHub.Shared.Services.Interfaces;
 
 namespace ONEHub.LandingPages.Workers;

@@ -1,6 +1,5 @@
 ﻿namespace ONEHub.LandingPages.Consumer;
 
-using ONEHub.LandingPages.Core.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ONEHub.Shared.Extensions;

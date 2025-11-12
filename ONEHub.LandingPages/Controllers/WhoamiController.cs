@@ -1,7 +1,4 @@
 ﻿namespace ONEHub.LandingPages.Controllers;
-
-using ONEHub.LandingPages.Core.Extensions;
-using ONEHub.LandingPages.Core.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ONEHub.Shared.Extensions;
