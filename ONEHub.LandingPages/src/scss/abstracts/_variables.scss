@@ -1,0 +1,19 @@
+:root {
+  --shine-duration: 2.3s;
+  --shine-timing: linear;
+  --color: rgba(255, 244, 163, 1);
+  --border-color: rgba(255, 244, 163, 1);
+  --background-color: rgba(30, 31, 29, 1);
+  --submit-btn-text-color: rgba(255, 255, 255, 1);
+  --submit-btn-border-color: linear-gradient(90deg, #CBA465 0%, #765520 25%, #EED6AF 50%, #765520 75%, #CBA465 100%);
+  --submit-btn-background-color: linear-gradient(180deg, #D93636 0%, #C72222 48%, #BA0101 49%, #A60101 100%);
+  --submit-btn-box-shadow: rgba(255, 235, 120, 0.75);
+}
+
+$breakpoints: (
+  small-phone: 330px,   // Small mobile
+  phone: 576px,        // mobile
+  small-tablet: 768px, // iPad portrait
+  tablet: 1024px,      // iPad landscape
+  desktop: 1440px      // Large desktop
+);

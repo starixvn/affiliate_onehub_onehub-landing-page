@@ -1,0 +1,29 @@
+@use '../abstracts/mixins' as *;
+
+.video-container-wrapper {
+    padding: 12px 16px;
+    margin: auto;
+
+    @include respond-to(small-tablet) {
+        padding: 16px 20px;
+    }
+
+    @include respond-to(tablet) {
+        padding: 20px 24px;
+    }
+
+    @include respond-to(tablet-to-desktop) {
+        padding: 24px 32px;
+    }
+
+    .video-container {
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    }
+}

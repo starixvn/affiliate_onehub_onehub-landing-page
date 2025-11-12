@@ -1,0 +1,19 @@
+﻿@using ONEHub.LandingPages.Core.Models
+@model LandingPageModel
+
+@{
+    var modules = Model!.LandingPage!.CurrentModules!;
+}
+
+<div class="swiper-container">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            @foreach (var module in modules)
+            {
+                var mediaLink = module.GetFullMediaLink(Model.MediaRootDomain);
+                <div class="swiper-slide"><img src="@mediaLink" alt="promo list"></div>
+            }
+     </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>

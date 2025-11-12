@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PageTitle_Default" xml:space="preserve">
+    <value>Trang Đích Liên Kết</value>
+  </data>
+  <data name="PageTitle_LandingPage" xml:space="preserve">
+    <value>Đăng ký 12BET ngay hôm nay và trải nghiệm cá cược thể thao, bóng đá, casino trực tuyến, nổ hũ và xổ số tại trang nhà cái uy tín hàng đầu Châu Á!</value>
+  </data>
+  <data name="Form_QuickRegistration" xml:space="preserve">
+    <value>ĐĂNG KÝ NHANH</value>
+  </data>
+  <data name="Form_Register" xml:space="preserve">
+    <value>NHẬN NGAY!</value>
+  </data>
+  <data name="Form_Username" xml:space="preserve">
+    <value>Tên đăng nhập</value>
+  </data>
+  <data name="Form_Password" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="Form_PhoneNumber" xml:space="preserve">
+    <value>Số ĐT</value>
+  </data>
+  <data name="Form_Email" xml:space="preserve">
+    <value>Email (Tùy chọn)</value>
+  </data>
+  <data name="Form_AffiliateCode" xml:space="preserve">
+    <value>ID Đại lý/ Người giới thiệu (Tùy chọn)</value>
+  </data>
+  <data name="Form_Currency" xml:space="preserve">
+    <value>Tiền Tệ</value>
+  </data>
+  <data name="Form_Captcha" xml:space="preserve">
+    <value>Nhập mã captcha</value>
+  </data>
+  <data name="Form_UsernameHelp" xml:space="preserve">
+    <value>Để bảo mật, chúng tôi khuyến cáo tên đăng nhập không chứa tên thật của bạn</value>
+  </data>
+  <data name="Form_TermsAgreement" xml:space="preserve">
+    <value>Bằng cách nhấp vào nút NHẬN NGAY, tôi xác nhận rằng tôi đã trên 18 tuổi và đồng ý với các {0} của bạn.</value>
+  </data>
+  <data name="Form_TermsAndConditions" xml:space="preserve">
+    <value>điều khoản &amp; điều kiện</value>
+  </data>
+  <data name="Mobile_DearCustomer" xml:space="preserve">
+    <value>Khách Hàng Thân Mến</value>
+  </data>
+  <data name="Mobile_BetterExperience" xml:space="preserve">
+    <value>Để mang đến trải nghiệm và sản phẩm tốt hơn</value>
+  </data>
+  <data name="Mobile_RotatePhone" xml:space="preserve">
+    <value>Vui lòng xoay điện thoại theo chiều dọc để có trải nghiệm chơi game tốt hơn</value>
+  </data>
+  <data name="Mobile_Apologize" xml:space="preserve">
+    <value>Chúng tôi xin lỗi vì sự bất tiện này và hy vọng bạn thông cảm. Cảm ơn!</value>
+  </data>
+  <data name="A11y_ScrollToTop" xml:space="preserve">
+    <value>Cuộn lên đầu</value>
+  </data>
+  <data name="A11y_Required" xml:space="preserve">
+    <value>bắt buộc</value>
+  </data>
+  <data name="Alt_Logo" xml:space="preserve">
+    <value>logo</value>
+  </data>
+  <data name="Alt_HeroImage" xml:space="preserve">
+    <value>hình ảnh chính</value>
+  </data>
+  <data name="Alt_PromoList" xml:space="preserve">
+    <value>danh sách khuyến mãi</value>
+  </data>
+  <data name="Alt_CTAButton" xml:space="preserve">
+    <value>nút hành động</value>
+  </data>
+  <data name="Alt_ContactUs" xml:space="preserve">
+    <value>liên hệ chúng tôi</value>
+  </data>
+  <data name="Alt_PaymentMethod" xml:space="preserve">
+    <value>phương thức thanh toán</value>
+  </data>
+  <data name="Alt_LicenseeAwards" xml:space="preserve">
+    <value>giải thưởng cấp phép</value>
+  </data>
+  <data name="Alt_Login" xml:space="preserve">
+    <value>đăng nhập</value>
+  </data>
+  <data name="Alt_Captcha" xml:space="preserve">
+    <value>mã xác thực</value>
+  </data>
+  <data name="Validation_UsernameRequired" xml:space="preserve">
+    <value>Tên đăng nhập là bắt buộc.</value>
+  </data>
+  <data name="Validation_PasswordLengthRequired" xml:space="preserve">
+    <value>Mật khẩu phải có từ 6-15 ký tự, bao gồm cả chữ, số và ký tự đặc biệt (!@#$%^&amp;*)</value>
+  </data>
+  <data name="Validation_PhoneRequired" xml:space="preserve">
+    <value>Vui lòng nhập số điện thoại</value>
+  </data>
+  <data name="Validation_EmailFormat" xml:space="preserve">
+    <value>Địa chỉ email không hợp lệ</value>
+  </data>
+  <data name="Validation_AffiliateNotFound" xml:space="preserve">
+    <value>Tìm không thấy ID Đại lý</value>
+  </data>
+  <data name="Validation_EmailCannotChange" xml:space="preserve">
+    <value>Không thể thay đổi Email sau khi xác nhận</value>
+  </data>
+  <data name="Validation_AffiliateCannotChange" xml:space="preserve">
+    <value>Vui lòng nhập ID Đại lý (tùy chọn), Thông tin không thể thay đổi sau khi đã nhập!</value>
+  </data>
+  <data name="Validation_UsernameNoLongerAvailable" xml:space="preserve">
+    <value>Tên đăng nhập không còn khả dụng.</value>
+  </data>
+  <data name="Validation_PasswordRequired" xml:space="preserve">
+    <value>Mật khẩu là bắt buộc</value>
+  </data>
+  <data name="Validation_UsernameLengthRequired" xml:space="preserve">
+    <value>Tên đăng nhập phải có 6 đến 18 ký tự</value>
+  </data>
+  <data name="Validation_EmailAlreadyExists" xml:space="preserve">
+    <value>Email đã tồn tại.</value>
+  </data>
+  <data name="Validation_PhoneInvalidForCountry" xml:space="preserve">
+    <value>Số điện thoại không hợp lệ cho quốc gia đã chọn.</value>
+  </data>
+  <data name="PhoneNumber_InvalidForCountryWithCode" xml:space="preserve">
+    <value>Số điện thoại không hợp lệ cho quốc gia {0}</value>
+  </data>
+  <data name="Validation_PhoneInvalid" xml:space="preserve">
+    <value>Số điện thoại không hợp lệ</value>
+  </data>
+  <data name="Validation_Capcha" xml:space="preserve">
+    <value>Bạn phải hoàn thành xác minh CAPTCHA</value>
+  </data>
+  <data name="Validation_PasswordComplexity" xml:space="preserve">
+    <value>Trường Mật khẩu phải có ít nhất 6 ký tự, chứa ít nhất một chữ cái và một số.</value>
+  </data>
+  <data name="Validation_CommonError" xml:space="preserve">
+    <value>Đăng ký không thành công. Vui lòng liên hệ bộ phận chăm sóc khách hàng để được hỗ trợ.</value>
+  </data>
+  <data name="Meta_Description" xml:space="preserve">
+    <value>Đăng ký ngay tài khoản 12BET để tận hưởng trải nghiệm cá cược trực tuyến toàn diện, bao gồm thể thao, sòng bạc trực tuyến, Slot/ Nổ hũ,và xổ số 3 miền. Tận hưởng các chương trình khuyến mãi độc quyền dành cho thành viên mới, nạp và rút tiền nhanh chóng thuận tiện!</value>
+  </data>
+  <data name="Meta_Keywords" xml:space="preserve">
+    <value>Đăng nhập 12bet, Đăng ký 12bet, 12bet Việt Nam, Gửi tiền 12bet, Rút tiền 12bet</value>
+  </data>
+  <data name="Meta_TwitterTitle" xml:space="preserve">
+    <value>Đăng ký 12BET ngay hôm nay và trải nghiệm cá cược thể thao, bóng đá, casino trực tuyến, nổ hũ và xổ số tại trang nhà cái uy tín hàng đầu Châu Á!</value>
+  </data>
+  <data name="Meta_TwitterDescription" xml:space="preserve">
+    <value>Đăng ký ngay tài khoản 12BET để tận hưởng trải nghiệm cá cược trực tuyến toàn diện, bao gồm thể thao, sòng bạc trực tuyến, Slot/ Nổ hũ,và xổ số 3 miền. Tận hưởng các chương trình khuyến mãi độc quyền dành cho thành viên mới, nạp và rút tiền nhanh chóng thuận tiện!</value>
+  </data>
+  <data name="Meta_OgTitle" xml:space="preserve">
+    <value>Đăng ký 12BET ngay hôm nay và trải nghiệm cá cược thể thao, bóng đá, casino trực tuyến, nổ hũ và xổ số tại trang nhà cái uy tín hàng đầu Châu Á!</value>
+  </data>
+  <data name="Meta_OgDescription" xml:space="preserve">
+    <value>Đăng ký ngay tài khoản 12BET để tận hưởng trải nghiệm cá cược trực tuyến toàn diện, bao gồm thể thao, sòng bạc trực tuyến, Slot/ Nổ hũ,và xổ số 3 miền. Tận hưởng các chương trình khuyến mãi độc quyền dành cho thành viên mới, nạp và rút tiền nhanh chóng thuận tiện!</value>
+  </data>
+</root>

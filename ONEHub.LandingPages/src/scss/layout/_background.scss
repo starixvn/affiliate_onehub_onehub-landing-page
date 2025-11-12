@@ -1,0 +1,11 @@
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  z-index: -1;
+}

@@ -1,0 +1,98 @@
+//theme-1
+.theme-gold {
+    --color: rgba(255, 244, 163, 1);
+    --border-color: rgba(255, 244, 163, 1);
+    --background-color: rgba(30, 31, 29, 1);
+    --submit-btn-text-color: rgba(255, 255, 255, 1);
+    --submit-btn-border-color: linear-gradient(90deg, #CBA465 0%, #765520 25%, #EED6AF 50%, #765520 75%, #CBA465 100%);
+    --submit-btn-background-color: linear-gradient(180deg, #D93636 0%, #C72222 48%, #BA0101 49%, #A60101 100%);
+    --submit-btn-box-shadow: rgba(255, 235, 120, 0.75);
+}
+
+//theme-2
+.theme-orange {
+    --color: rgba(252, 195, 48, 1);
+    --border-color: rgba(252, 195, 48, 1);
+    --background-color: linear-gradient(180deg, #261E07 0%, #1E1F1D 100%);
+    --submit-btn-text-color: rgba(0, 0, 0, 1);
+    --submit-btn-border-color: linear-gradient(90deg, #CBA465 0%, #765520 25%, #EED6AF 50%, #765520 75%, #CBA465 100%);
+    --submit-btn-background-color: linear-gradient(180deg, #FCC330 0%, #FFD363 48%, #FCC330 49%, #FCC330 100%);
+    --submit-btn-box-shadow: rgba(255, 235, 120, 0.75);
+}
+
+//theme-3
+.theme-yellow {
+    --color: rgba(255, 119, 0, 1);
+    --border-color: rgba(255, 150, 57, 1);
+    --background-color: linear-gradient(180deg, #261200 0%, #1E1F1D 100%);
+    --submit-btn-text-color: rgba(0, 0, 0, 1);
+    --submit-btn-border-color: linear-gradient(90deg, #FFAF69 0%, #AD5100 25%, #FFCDA2 50%, #AD5100 75%, #FFAF69 100%);
+    --submit-btn-background-color: linear-gradient(180deg, #FF7700 0%, #FF9A42 48%, #FF7700 49%, #FF7700 100%);
+    --submit-btn-box-shadow: rgba(255, 178, 112, 1);
+}
+
+//theme-4
+.theme-green {
+    --color: rgba(0, 195, 119, 1);
+    --border-color: rgba(0, 195, 119, 1);
+    --background-color: rgba(30, 31, 29, 1);
+    --submit-btn-text-color: rgba(0, 0, 0, 1);
+    --submit-btn-border-color: linear-gradient(90deg, #00A766 0%, #007A4A 25%, #8CFFD2 50%, #007A4A 75%, #00A766 100%);
+    --submit-btn-background-color: linear-gradient(180deg, #3AFFB2 0%, #00EA8F 48%, #00D481 49%, #00D481 100%);
+    --submit-btn-box-shadow: rgba(45, 250, 170, 0.75);
+}
+
+//theme-5
+.theme-lightgreen {
+    --color: rgba(124, 255, 53, 1);
+    --border-color: rgba(134, 238, 78, 1);
+    --background-color: linear-gradient(180deg, #131F08 0%, #1E1F1D 100%);
+    --submit-btn-text-color: rgba(0, 0, 0, 1);
+    --submit-btn-border-color: linear-gradient(90deg, #C2FFA2 0%, #48802A 25%, #C2FFA2 50%, #48802A 75%, #C2FFA2 100%);
+    --submit-btn-background-color: linear-gradient(180deg, #7CFF35 0%, #7CFF35 48%, #69D92D 49%, #69D92D 100%);
+    --submit-btn-box-shadow: rgba(123, 254, 52, 1);
+}
+
+//theme-6
+.theme-sky {
+    --color: rgba(43, 255, 242, 1);
+    --border-color: rgba(43, 255, 242, 1);
+    --background-color: linear-gradient(180deg, #1B2B0B 0%, #0A1005 100%);
+    --submit-btn-text-color: rgba(0, 0, 0, 1);
+    --submit-btn-border-color: linear-gradient(90deg, #22BEB4 0%, #168079 25%, #D4FFFC 50%, #168079 75%, #22BEB4 100%);
+    --submit-btn-background-color: linear-gradient(180deg, #2BFFF1 0%, #7DFFF6 48%, #25D9CD 49%, #2BFFF1 100%);
+    --submit-btn-box-shadow: rgba(68, 255, 243, 1);
+}
+
+//theme-7
+.theme-navy {
+    --color: rgba(89, 167, 255, 1);
+    --border-color: rgba(43, 142, 255, 1);
+    --background-color: linear-gradient(180deg, #0D1926 0%, #060C12 100%);
+    --submit-btn-text-color: rgba(0, 0, 0, 1);
+    --submit-btn-border-color: linear-gradient(90deg, #437DBF 0%, #335F92 25%, #9ECBFF 50%, #335F92 75%, #437DBF 100%);
+    --submit-btn-background-color: linear-gradient(180deg, #59A7FF 0%, #6DB1FF 48%, #4C8ED9 49%, #59A7FF 100%);
+    --submit-btn-box-shadow: rgba(120, 183, 255, 1);
+}
+
+//theme-8
+.theme-pink {
+    --color: rgba(255, 57, 183, 1);
+    --border-color: rgba(255, 57, 183, 1);
+    --background-color: linear-gradient(180deg, #26091B 0%, #1E1F1D 100%);
+    --submit-btn-text-color: rgba(0, 0, 0, 1);
+    --submit-btn-border-color: linear-gradient(90deg, #891760 0%, #FF39B7 25%, #FFB1E3 50%, #FF39B7 75%, #891760 100%);
+    --submit-btn-background-color: linear-gradient(180deg, #FF39B7 0%, #FF39B7 48%, #CA3192 49%, #FF39B7 100%);
+    --submit-btn-box-shadow: rgba(255, 104, 200, 1);
+}
+
+//theme-9
+.theme-purple {
+    --color: rgba(215, 105, 251, 1);
+    --border-color: rgba(215, 105, 251, 1);
+    --background-color: linear-gradient(180deg, #1F0C26 0%, #0A040D 100%);
+    --submit-btn-text-color: rgba(0, 0, 0, 1);
+    --submit-btn-border-color: linear-gradient(90deg, #A354BD 0%, #4D2859 25%, #ECB2FF 50%, #4D2859 75%, #A354BD 100%);
+    --submit-btn-background-color: linear-gradient(180deg, #D769FB 0%, #E38CFF 48%, #D769FB 49%, #D769FB 100%);
+    --submit-btn-box-shadow: rgba(217, 112, 251, 1);
+}

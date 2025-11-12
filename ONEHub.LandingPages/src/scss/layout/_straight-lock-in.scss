@@ -1,0 +1,25 @@
+.straight-lock-in {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 40px;
+    background: #001942;
+    z-index: 9;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+}
+
+@media screen and (orientation: landscape) and (hover: none) and (pointer: coarse) {
+    .straight-lock-in {
+        display: flex;
+    }
+
+    #goTopBtn {
+        display: none !important;
+    }
+}

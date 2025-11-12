@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" maximum-scale=1.0/>
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@UI.Meta_Description">
+    <meta name="keyword" content="@UI.Meta_Keywords">
+    <meta name="twitter:title" content="@UI.Meta_TwitterTitle">
+    <meta name="twitter:description" content="@UI.Meta_TwitterDescription">
+    <meta name="twitter:domain" content="https://banner.picasso12.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://banner.picasso12.com/img/thumbnail/thumbnail_001.jpg?v=20250919032759">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="@UI.Meta_OgTitle">
+    <meta property="og:description" content="@UI.Meta_OgDescription">
+    <meta property="og:image" content="https://banner.picasso12.com/img/thumbnail/thumbnail_001.jpg?v=20250919032759">
+    
+    <link rel="canonical" href="https://www.12bet.com">
+    <link rel="alternate" hreflang="x-default" href="https://www.12bet.com">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TR2QRXQP');</script>
+
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="~/fonts/icomoon/style.css" />
+    <environment include="Production">
+        <link rel="stylesheet" href="~/dist/prod/site.css" asp-append-version="true" />
+    </environment>
+    <environment include="Development">
+        <link rel="stylesheet" href="~/dist/dev/site.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TR2QRXQP"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <!-- Redirect Overlay -->
+    <div id="redirect-overlay" style="display: none;">
+        <div class="redirect-spinner"></div>
+    </div>
+
+    <environment include="Development">
+        <script src="~/dist/dev/jquery.bundle.js" asp-append-version="true"></script>
+        <script src="~/dist/dev/vendor.bundle.js" asp-append-version="true"></script>
+        <script src="~/dist/dev/libphonenumber-node_modules_libphonenumber-js_c.bundle.js" asp-append-version="true"></script>
+        <script src="~/dist/dev/libphonenumber-node_modules_libphonenumber-js_e.bundle.js" asp-append-version="true"></script>
+        <script src="~/dist/dev/libphonenumber-node_modules_libphonenumber-js_es6_f.bundle.js" asp-append-version="true"></script>
+        <script src="~/dist/dev/site.bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Production">
+        <script src="~/dist/prod/jquery.bundle.js" asp-append-version="true"></script>
+        <script src="~/dist/prod/vendor.bundle.js" asp-append-version="true"></script>
+        <script src="~/dist/prod/libphonenumber-3213b867.bundle.js" asp-append-version="true"></script>
+        <script src="~/dist/prod/libphonenumber-8f257e7f.bundle.js" asp-append-version="true"></script>
+        <script src="~/dist/prod/libphonenumber-ed594eef.bundle.js" asp-append-version="true"></script>
+        <script src="~/dist/prod/site.bundle.js" asp-append-version="true"></script>
+    </environment>
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?" async defer></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

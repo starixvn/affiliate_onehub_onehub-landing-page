@@ -1,0 +1,37 @@
+@use '../abstracts/mixins' as *;
+
+.cta-btn {
+  display: block;
+  width: max-content;
+  transform-origin: center;
+  animation: cta-pulse 2s ease-in-out infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  padding: 12px 16px;
+  margin: auto;
+  cursor: pointer;
+
+  @include respond-to(small-tablet) {
+    padding: 16px 20px;
+  }
+
+  @include respond-to(tablet) {
+    padding: 20px 24px;
+  }
+
+  @include respond-to(tablet-to-desktop) {
+    padding: 24px 32px;
+  }
+}
+
+@keyframes cta-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}

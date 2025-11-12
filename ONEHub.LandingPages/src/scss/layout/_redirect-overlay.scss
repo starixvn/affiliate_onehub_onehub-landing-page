@@ -1,0 +1,38 @@
+// Redirect overlay styles
+#redirect-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.redirect-spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: redirect-spin 1s linear infinite;
+  box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes redirect-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Prevent body scrolling when overlay is active
+body.redirect-overlay-active {
+  overflow: hidden;
+}

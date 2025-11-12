@@ -1,0 +1,182 @@
+﻿@model ONEHub.LandingPages.Core.Models.RegisterForm;
+@using ONEHub.LandingPages.Core.Resources
+@{
+    var formConfig = Model.SignUpFormConfig!;
+    var submitText = UI.Form_Register;
+    if (Model.IsIndiaMarket)
+    {
+        submitText = "CREATE ACCOUNT";
+    }
+}
+
+<form id="register-form" class="register-form @formConfig.CssClass" method="post" autocomplete="off">
+    <div class="form-content">
+        <p class="form-title">@UI.Form_QuickRegistration</p>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="CountryCode" type="hidden" />
+        <input asp-for="CurrencyId" type="hidden" />
+        <input asp-for="UserLang" type="hidden" />
+        <input type="hidden" id="IsSuccessful" name="IsSuccessful" value="@Model.IsSuccessful" />
+        <input type="hidden" id="RedirectUrl" name="RedirectUrl" value="@Model.RedirectUrl" />
+        <!-- Username -->
+        <div class="input-field">
+            <div class="input-info">
+                @UI.Form_UsernameHelp
+            </div>
+            <div class="input-box">
+                <span class="required-tip" aria-label="@UI.A11y_Required">*</span>
+                <input asp-for="Username" placeholder="@UI.Form_Username" autocomplete="username" />
+                <div class="icon-area" aria-hidden="true">
+                    <i class="icon-detail icon-check-mark"></i>
+                    <i class="icon-detail icon-info"></i>
+                </div>
+            </div>
+            <span class="required-text" asp-validation-for="Username"></span>
+        </div>
+
+        <!-- Password -->
+        <div class="input-field">
+            <div class="input-box">
+                <span class="required-tip" aria-label="@UI.A11y_Required">*</span>
+                <input asp-for="UserPwd" placeholder="@UI.Form_Password" type="password" autocomplete="new-password" />
+                <div class="icon-area" aria-hidden="true">
+                    <i class="icon-detail icon-check-mark"></i>
+                    <i class="icon-detail icon-eye"></i>
+                    <i class="icon-detail icon-eye-slash"></i>
+
+                </div>
+            </div>
+            <input asp-for="Password" type="hidden" />
+            <span class="required-text" asp-validation-for="UserPwd"></span>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="input-field">
+            <div class="input-box-container">
+                <div class="input-box">
+                    <span class="required-tip" aria-label="required">*</span>
+                    <div class="dropdown-selected-container">
+                        <div class="dropdown-item">@Model.AreaCode</div>
+                        <input asp-for="AreaCode" type="hidden" />
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="required-tip" aria-label="@UI.A11y_Required">*</span>
+                    <input asp-for="PhoneNo" placeholder="@UI.Form_PhoneNumber" autocomplete="tel" />
+                </div>
+            </div>
+            <span class="required-text" asp-validation-for="PhoneNo"></span>
+        </div>
+
+        <!-- Country & Currency -->
+        @if (formConfig.IsEnableCurrency)
+        {
+            <div class="input-field">
+                <div class="input-box-container country-code-container">
+                    <div class="input-box">
+                        <span class="required-tip" aria-label="required">*</span>
+                        <div class="dropdown-selected-container">
+                            <div class="dropdown-item">
+                                <img src="~/images/flags/@(Model.CountryCode.ToLowerInvariant()).png" alt="country flag" class="flag-img" />
+                                @Model.CountryCode
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <!-- Email -->
+        @if (formConfig.IsEnableEmail)
+        {
+            <div class="input-field">
+                <div class="input-info">
+                    @UI.Validation_EmailCannotChange
+                </div>
+                <div class="input-box">
+                    <input asp-for="Email" placeholder="@UI.Form_Email" autocomplete="email" />
+                    <div class="icon-area" aria-hidden="true">
+                        <i class="icon-detail icon-check-mark"></i>
+                        <i class="icon-detail icon-info"></i>
+                    </div>
+                </div>
+                <span class="required-text" asp-validation-for="Email"></span>
+            </div>
+        }
+
+        <!-- Affiliate Code -->
+        @if (formConfig.IsEnableAffiliate)
+        {
+            var isAffCodeDisabled = Context.Request.Query.ContainsKey("AffCode");
+            <div class="input-field">
+                <div class="input-info">
+                    @UI.Validation_AffiliateCannotChange
+                </div>
+                <div class="input-box">
+                    <input asp-for="AffCode" placeholder="@UI.Form_AffiliateCode" disabled="@isAffCodeDisabled" />
+                    <div class="icon-area" aria-hidden="true">
+                        <i class="icon-detail icon-check-mark"></i>
+                        <i class="icon-detail icon-info"></i>
+                    </div>
+                </div>
+                <span class="required-text" asp-validation-for="AffCode"></span>
+            </div>
+        }
+        else
+        {
+            <input asp-for="AffCode" type="hidden" />
+        }
+
+        <!-- Turnstile Captcha -->
+        @if (Model.IsTurnstileCaptchaEnabled)
+        {
+            <div id="turnstile_widget" class="cf-turnstile"
+            data-sitekey="@Model.TurnstileSiteKey"
+            data-theme="dark"
+            data-size="flexible"
+            data-callback="onTurnstileSuccess"
+            data-error-callback="onTurnstileError"
+            data-expired-callback="onTurnstileExpired">
+            </div>
+        }
+
+        <!-- Fallback Captcha -->
+        <input asp-for="CaptchaType" type="hidden" />
+        <div id="numberCapcha" style="display:@(Model.IsTurnstileCaptchaEnabled ? "none" : "block")">
+            <div class="captcha-container">
+                <img id="tokenBox" alt="captcha" style="display:none"/>
+            </div>
+            <div class="input-field">
+                <div class="input-box">
+                    <input asp-for="ReCaptchaToken" placeholder="@UI.Form_Captcha" autocomplete="off" />
+                    <div class="icon-area" aria-hidden="true">
+                        <i class="icon-detail icon-check-mark"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button id="submit-btn" class="submit-btn" type="submit" aria-label="@submitText">
+            <span>@submitText</span>
+        </button>
+
+        <!-- Terms and Conditions -->
+        @if (formConfig.IsEnableTermsAndCondition)
+        {
+            var prefixTermsAgreement = string.Empty;
+            var suffixTermsAgreement = string.Empty;
+            var termsAgreementArr = UI.Form_TermsAgreement.Split("{0}");
+            prefixTermsAgreement = termsAgreementArr[0];
+            suffixTermsAgreement = termsAgreementArr[1];
+
+            <div class="terms-conditions">
+                @prefixTermsAgreement
+                <a rel="noreferrer" target="_blank" href="@Model.TermsConditionsUrl">
+                    @UI.Form_TermsAndConditions
+                </a>
+                @suffixTermsAgreement
+            </div>
+        }
+    </div>
+</form>

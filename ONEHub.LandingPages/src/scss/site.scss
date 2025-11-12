@@ -1,0 +1,66 @@
+@use './abstracts/variables' as *;
+@use './abstracts/mixins' as *;
+@use './abstracts/themes' as *;
+
+@use './base/fonts';
+@use './base/reset';
+@use './base/typography';
+@use './base/common';
+@use './base/utilities';
+
+@use './layout/straight-lock-in';
+@use './layout/go-top-btn';
+@use './layout/background';
+@use './layout/logo';
+@use './layout/hero-image';
+@use './layout/cta-button';
+@use './layout/register-form';
+@use './layout/youtube';
+@use './layout/fav-game';
+@use './layout/redirect-overlay';
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 24px;
+}
+
+.promo-img {
+  padding-top: 12px;
+  margin: auto;
+}
+
+.contact-us,
+.payment-method-img,
+.login-container {
+  padding: 12px 16px;
+  margin: auto;
+}
+
+.licensee-awards-img {
+  padding: 12px 0;
+  margin: auto;
+}
+
+.contact-us,
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@include respond-to(tablet-to-desktop) {
+
+  .logo-sponsor-container,
+  .video-container-wrapper,
+  .swiper-container,
+  .contact-us,
+  .licensee-awards-img {
+    max-width: 768px;
+  }
+
+  .register-form {
+    max-width: 600px;
+  }
+}

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PageTitle_Default" xml:space="preserve">
+    <value>Affiliate Landing Pages</value>
+  </data>
+  <data name="PageTitle_LandingPage" xml:space="preserve">
+    <value>Sign up for 12BET today and enjoy sports betting, casino games, slots, and lottery all in one place!</value>
+  </data>
+  <data name="Form_QuickRegistration" xml:space="preserve">
+    <value>QUICK REGISTRATION</value>
+  </data>
+  <data name="Form_Register" xml:space="preserve">
+    <value>JOIN NOW!</value>
+  </data>
+  <data name="Form_Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Form_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Form_PhoneNumber" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="Form_Email" xml:space="preserve">
+    <value>Email (Optional)</value>
+  </data>
+  <data name="Form_AffiliateCode" xml:space="preserve">
+    <value>Affiliate ID/Referral (Optional)</value>
+  </data>
+  <data name="Form_Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="Form_Captcha" xml:space="preserve">
+    <value>Enter captcha code</value>
+  </data>
+  <data name="Form_UsernameHelp" xml:space="preserve">
+    <value>For security, we suggest that your username does not contain your real name.</value>
+  </data>
+  <data name="Form_TermsAgreement" xml:space="preserve">
+    <value>By clicking the JOIN NOW button, I hereby acknowledge that I am above 18 years old and have read and accepted your {0}.</value>
+  </data>
+  <data name="Form_TermsAndConditions" xml:space="preserve">
+    <value>Terms &amp; Conditions</value>
+  </data>
+  <data name="Mobile_DearCustomer" xml:space="preserve">
+    <value>Dear Valued Customer</value>
+  </data>
+  <data name="Mobile_BetterExperience" xml:space="preserve">
+    <value>In order to present a better experience and products</value>
+  </data>
+  <data name="Mobile_RotatePhone" xml:space="preserve">
+    <value>Kindly rotate your phone in portrait for better game experience</value>
+  </data>
+  <data name="Mobile_Apologize" xml:space="preserve">
+    <value>We apologize for the inconvenience caused, and hope for your utmost understanding. Thank you!</value>
+  </data>
+  <data name="A11y_ScrollToTop" xml:space="preserve">
+    <value>Scroll to top</value>
+  </data>
+  <data name="A11y_Required" xml:space="preserve">
+    <value>required</value>
+  </data>
+  <data name="Alt_Logo" xml:space="preserve">
+    <value>logo</value>
+  </data>
+  <data name="Alt_HeroImage" xml:space="preserve">
+    <value>hero-img</value>
+  </data>
+  <data name="Alt_PromoList" xml:space="preserve">
+    <value>promo list</value>
+  </data>
+  <data name="Alt_CTAButton" xml:space="preserve">
+    <value>cta-btn</value>
+  </data>
+  <data name="Alt_ContactUs" xml:space="preserve">
+    <value>contact-us</value>
+  </data>
+  <data name="Alt_PaymentMethod" xml:space="preserve">
+    <value>payment-method</value>
+  </data>
+  <data name="Alt_LicenseeAwards" xml:space="preserve">
+    <value>licensee-awards</value>
+  </data>
+  <data name="Alt_Login" xml:space="preserve">
+    <value>login</value>
+  </data>
+  <data name="Alt_Captcha" xml:space="preserve">
+    <value>captcha</value>
+  </data>
+  <data name="Validation_UsernameRequired" xml:space="preserve">
+    <value>Username is required.</value>
+  </data>
+  <data name="Validation_PasswordLengthRequired" xml:space="preserve">
+    <value>Password must be 6-15 characters, contain alphanumeric.</value>
+  </data>
+  <data name="Validation_PhoneRequired" xml:space="preserve">
+    <value>Please fill in the phone field</value>
+  </data>
+  <data name="Validation_EmailFormat" xml:space="preserve">
+    <value>Email address format incorrect</value>
+  </data>
+  <data name="Validation_AffiliateNotFound" xml:space="preserve">
+    <value>Affiliate ID cant be found</value>
+  </data>
+  <data name="Validation_EmailCannotChange" xml:space="preserve">
+    <value>Email cannot be changed after submission.</value>
+  </data>
+  <data name="Validation_AffiliateCannotChange" xml:space="preserve">
+    <value>Please enter Affiliate ID (Optional), it can not change once enter!</value>
+  </data>
+  <data name="Validation_UsernameNoLongerAvailable" xml:space="preserve">
+    <value>Username is no longer available.</value>
+  </data>
+  <data name="Validation_PasswordRequired" xml:space="preserve">
+    <value>Password is required.</value>
+  </data>
+  <data name="Validation_UsernameLengthRequired" xml:space="preserve">
+    <value>6-18 alphanumeric (A-Z, a-z, 0-9) characters only.</value>
+  </data>
+  <data name="Validation_EmailAlreadyExists" xml:space="preserve">
+    <value>Email already exists</value>
+  </data>
+  <data name="Validation_PhoneInvalidForCountry" xml:space="preserve">
+    <value>Invalid phone number for the selected country.</value>
+  </data>
+  <data name="PhoneNumber_InvalidForCountryWithCode" xml:space="preserve">
+    <value>Invalid phone number for the country {0}</value>
+  </data>
+  <data name="Validation_PhoneInvalid" xml:space="preserve">
+    <value>Invalid phone number</value>
+  </data>
+  <data name="Validation_Capcha" xml:space="preserve">
+    <value>You must complete the CAPTCHA verification</value>
+  </data>
+  <data name="Validation_PasswordComplexity" xml:space="preserve">
+    <value>The field Password must be at least 6 characters, contain at least one letter and one number.</value>
+  </data>
+  <data name="Validation_CommonError" xml:space="preserve">
+    <value>Registration unsuccessful. Please reach out to customer service for assistance.</value>
+  </data>
+  <data name="Meta_Description" xml:space="preserve">
+    <value>Experience Comprehensive Betting with 12BET: Enjoy sports betting, live casino games, slots, e-sports, and lottery, betting exchange, all in one place. Take advantage of exciting promotions, easy deposits and withdrawals, and a secure &amp; trustworthy platform</value>
+  </data>
+  <data name="Meta_Keywords" xml:space="preserve">
+    <value>12bet, betting exchange, 12bet promotions, 12bet login, 12bet deposit, 12bet withdrawals, 12bet secure, 12bet Malaysia</value>
+  </data>
+  <data name="Meta_TwitterTitle" xml:space="preserve">
+    <value>12BET: The Complete Online Gaming Platform in India for Sports, Casino, and Slots</value>
+  </data>
+  <data name="Meta_TwitterDescription" xml:space="preserve">
+    <value>Experience Comprehensive Betting with 12BET: Enjoy sports betting, live casino games, slots, e-sports, and lottery, betting exchange, all in one place. Take advantage of exciting promotions, easy deposits and withdrawals, and a secure &amp; trustworthy platform</value>
+  </data>
+  <data name="Meta_OgTitle" xml:space="preserve">
+    <value>12BET: The Complete Online Gaming Platform in India for Sports, Casino, and Slots</value>
+  </data>
+  <data name="Meta_OgDescription" xml:space="preserve">
+    <value>Experience Comprehensive Betting with 12BET: Enjoy sports betting, live casino games, slots, e-sports, and lottery, betting exchange, all in one place. Take advantage of exciting promotions, easy deposits and withdrawals, and a secure &amp; trustworthy platform</value>
+  </data>
+</root>

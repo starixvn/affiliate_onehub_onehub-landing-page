@@ -1,0 +1,78 @@
+@use '../abstracts/mixins' as *;
+
+.swiper-container {
+    position: relative;
+    margin: auto;
+
+    .swiper {
+        padding: 12px 16px;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-button-prev {
+        left: 8px;
+        display: none;
+    }
+
+    .swiper-button-next {
+        right: 8px;
+        display: none;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        display: none;
+    }
+
+    // .swiper-button-prev, 
+    // .swiper-button-next {
+    //     position: absolute;
+    //     top: 50%;
+    //     transform: translateY(-50%);
+    //     z-index: 10;
+    // }
+
+    // .swiper-button-prev {
+    //     background: url('/images/arrow-left.png') no-repeat center;
+    //     background-size: contain;
+    //     width: 32px;
+    //     height: 32px;
+    // }
+
+    // .swiper-button-next {
+    //     background: url('/images/arrow-right.png') no-repeat center;
+    //     background-size: contain;
+    //     width: 32px;
+    //     height: 32px;
+    // }
+
+    .swiper-pagination {
+        position: absolute;
+        display: block;
+        bottom: 4px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        background-color: #fff;
+        opacity: 0.4;
+        border-radius: 50%;
+        margin: 0 4px;
+        display: inline-block;
+        cursor: pointer;
+
+        &-active,
+        &[aria-current="true"] {
+            opacity: 1;
+        }
+    }
+}

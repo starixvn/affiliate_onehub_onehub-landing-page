@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PageTitle_Default" xml:space="preserve">
+    <value>అనుబంధ ల్యాండింగ్ పేజీలు</value>
+  </data>
+  <data name="PageTitle_LandingPage" xml:space="preserve">
+    <value>ఈరోజే 12BET లో సైన్ అప్ చేయండి మరియు స్పోర్ట్స్ బెట్టింగ్, క్యాసినో గేమ్స్, స్లాట్స్ మరియు లాటరీని ఒకే చోట ఆనందించండి!</value>
+  </data>
+  <data name="Form_QuickRegistration" xml:space="preserve">
+    <value>రేజిస్ట్రేశన</value>
+  </data>
+  <data name="Form_Register" xml:space="preserve">
+    <value>ఇప్పుడే చేరండి!</value>
+  </data>
+  <data name="Form_Username" xml:space="preserve">
+    <value>యూజర్ నేమ్</value>
+  </data>
+  <data name="Form_Password" xml:space="preserve">
+    <value>పాస్వర్డ్</value>
+  </data>
+  <data name="Form_PhoneNumber" xml:space="preserve">
+    <value>ఫోన్ నంబర్</value>
+  </data>
+  <data name="Form_Email" xml:space="preserve">
+    <value>ఇమెయిల్ (ఆప్షనల్)</value>
+  </data>
+  <data name="Form_AffiliateCode" xml:space="preserve">
+    <value>అఫిలియేట్/రిఫరల్ (ఐచ్చికం)</value>
+  </data>
+  <data name="Form_Currency" xml:space="preserve">
+    <value>కరెన్సీ</value>
+  </data>
+  <data name="Form_Captcha" xml:space="preserve">
+    <value>క్యాప్చా కోడ్‌ను నమోదు చేయండి</value>
+  </data>
+  <data name="Form_UsernameHelp" xml:space="preserve">
+    <value>సెక్యూరిటీ కోసం, మీ యూజర్ నేమ్ లో మీ రియల్ నేమ్ ఉండకూడదని మేము సూచిస్తున్నాము.</value>
+  </data>
+  <data name="Form_TermsAgreement" xml:space="preserve">
+    <value>"ఇప్పుడే చేరండి!"  బటన్ క్లిక్ చేయడం ద్వారా, నాకు 18 సంవత్సరాల కంటే ఎక్కువ వయస్సు ఉందని మరియు మీ నిబంధనలు &amp; షరతులను చదివి అంగీకరిస్తున్నానని ఇందుమూలంగా ధృవీకరిస్తున్నాను. {0}.</value>
+  </data>
+  <data name="Form_TermsAndConditions" xml:space="preserve">
+    <value>నిబంధనలు &amp; షరతులు చదివి అంగీకరించానని ఒప్పుకుంటున్నాను</value>
+  </data>
+  <data name="Mobile_DearCustomer" xml:space="preserve">
+    <value>ప్రియమైన కస్టమర్</value>
+  </data>
+  <data name="Mobile_BetterExperience" xml:space="preserve">
+    <value>మెరుగైన అనుభవం మరియు ఉత్పత్తులను అందించడానికి</value>
+  </data>
+  <data name="Mobile_RotatePhone" xml:space="preserve">
+    <value>మెరుగైన గేమ్ అనుభవం కోసం దయచేసి మీ ఫోన్‌ను నిలువుగా తిప్పండి</value>
+  </data>
+  <data name="Mobile_Apologize" xml:space="preserve">
+    <value>కలిగించిన అసౌకర్యానికి మేము క్షమాపణ చెప్పుతున్నాము మరియు మీ అవగాహనను ఆశిస్తున్నాము. ధన్యవాదాలు!</value>
+  </data>
+  <data name="A11y_ScrollToTop" xml:space="preserve">
+    <value>పైకి స్క్రోల్ చేయండి</value>
+  </data>
+  <data name="A11y_Required" xml:space="preserve">
+    <value>అవసరం</value>
+  </data>
+  <data name="Alt_Logo" xml:space="preserve">
+    <value>లోగో</value>
+  </data>
+  <data name="Alt_HeroImage" xml:space="preserve">
+    <value>హీరో ఇమేజ్</value>
+  </data>
+  <data name="Alt_PromoList" xml:space="preserve">
+    <value>ప్రమోషన్ జాబితా</value>
+  </data>
+  <data name="Alt_CTAButton" xml:space="preserve">
+    <value>CTA బటన్</value>
+  </data>
+  <data name="Alt_ContactUs" xml:space="preserve">
+    <value>మమ్మల్ని సంప్రదించండి</value>
+  </data>
+  <data name="Alt_PaymentMethod" xml:space="preserve">
+    <value>చెల్లింపు పద్ధతి</value>
+  </data>
+  <data name="Alt_LicenseeAwards" xml:space="preserve">
+    <value>లైసెన్సీ అవార్డులు</value>
+  </data>
+  <data name="Alt_Login" xml:space="preserve">
+    <value>లాగిన్</value>
+  </data>
+  <data name="Alt_Captcha" xml:space="preserve">
+    <value>క్యాప్చా</value>
+  </data>
+  <data name="Validation_UsernameRequired" xml:space="preserve">
+    <value>యూజర్ నేమ్ అవసరం.</value>
+  </data>
+  <data name="Validation_PasswordLengthRequired" xml:space="preserve">
+    <value>పాస్‌వర్డ్ తప్పనిసరిగా 6-15 అక్షరాలు ఉండాలి, అక్షరాలు మరియు సంఖ్యలను కలిగి ఉండాలి</value>
+  </data>
+  <data name="Validation_PhoneRequired" xml:space="preserve">
+    <value>దయచేసి ఫోన్ ఫీల్డ్‌ను నింపండి</value>
+  </data>
+  <data name="Validation_EmailFormat" xml:space="preserve">
+    <value>ఇమెయిల్ అడ్రస్ ఫార్మాట్ తప్పు</value>
+  </data>
+  <data name="Validation_AffiliateNotFound" xml:space="preserve">
+    <value>అఫిలియేట్ ID కనిపించలేదు</value>
+  </data>
+  <data name="Validation_EmailCannotChange" xml:space="preserve">
+    <value>సబ్మిట్ చేసాక ఇమెయిల్ ని చేంజ్ చేయలేరు</value>
+  </data>
+  <data name="Validation_AffiliateCannotChange" xml:space="preserve">
+    <value>దయచేసి అఫిలియేట్ IDని ఎంటర్ చేయండి (ఆప్షనల్), ఒకసారి ఎంటర్ చేసిన తర్వాత అది మారదు!</value>
+  </data>
+  <data name="Validation_UsernameNoLongerAvailable" xml:space="preserve">
+    <value>వినియోగదారు పేరు ఇకపై అందుబాటులో లేదు.</value>
+  </data>
+  <data name="Validation_PasswordRequired" xml:space="preserve">
+    <value>పాస్‌వర్డ్ అవసరం.</value>
+  </data>
+  <data name="Validation_UsernameLengthRequired" xml:space="preserve">
+    <value>6-18 ఆల్ఫాన్యూమరిక్ (A-Z, a-z, 0-9) అక్షరాలు మాత్రమే.</value>
+  </data>
+  <data name="Validation_EmailAlreadyExists" xml:space="preserve">
+    <value>ఇమెయిల్ ఇప్పటికే ఉంది.</value>
+  </data>
+  <data name="Validation_PhoneInvalidForCountry" xml:space="preserve">
+    <value>ఎంచుకున్న దేశానికి చెల్లని ఫోన్ నంబర్.</value>
+  </data>
+  <data name="PhoneNumber_InvalidForCountryWithCode" xml:space="preserve">
+    <value>దేశం {0} కోసం చెల్లని ఫోన్ నంబర్</value>
+  </data>
+  <data name="Validation_PhoneInvalid" xml:space="preserve">
+    <value>చెల్లని ఫోన్ నంబర్</value>
+  </data>
+  <data name="Validation_Capcha" xml:space="preserve">
+    <value>మీరు CAPTCHA ధృవీకరణను పూర్తి చేయాలి</value>
+  </data>
+  <data name="Validation_PasswordComplexity" xml:space="preserve">
+    <value>పాస్‌వర్డ్ ఫీల్డ్ కనీసం 6 అక్షరాలుగా ఉండాలి, కనీసం ఒక అక్షరం మరియు ఒక సంఖ్యను కలిగి ఉండాలి.</value>
+  </data>
+  <data name="Validation_CommonError" xml:space="preserve">
+    <value>నమోదు విఫలమైంది. సహాయం కోసం దయచేసి కస్టమర్ సేవలను సంప్రదించండి.</value>
+  </data>
+  <data name="Meta_Description" xml:space="preserve">
+    <value>స్పోర్ట్స్, లైవ్ క్యాసినో, స్లాట్స్, బెట్టింగ్ ఎక్స్ఛేంజ్ మరియు లాటరీతో సహా సమగ్రమైన ఆన్‌లైన్ బెట్టింగ్ అనుభవాన్ని ఆస్వాదించడానికి 12BET తో ఇప్పుడే సైన్ అప్ చేయండి. సులభమైన డిపాజిట్లు మరియు విత్డ్రావాల్ తో న్యూ మెంబెర్స్ కోసం ప్రత్యేకమైన ప్రమోషన్‌లను అన్‌లాక్ చేయండి!</value>
+  </data>
+  <data name="Meta_Keywords" xml:space="preserve">
+    <value>12bet login, 12bet Register, 12bet India, 12bet Signup, 12bet Deposit, 12bet Withdrawal</value>
+  </data>
+  <data name="Meta_TwitterTitle" xml:space="preserve">
+    <value>ఈరోజే 12BET లో సైన్ అప్ చేయండి మరియు స్పోర్ట్స్ బెట్టింగ్, క్యాసినో గేమ్స్, స్లాట్స్ మరియు లాటరీని ఒకే చోట ఆనందించండి!</value>
+  </data>
+  <data name="Meta_TwitterDescription" xml:space="preserve">
+    <value>స్పోర్ట్స్, లైవ్ క్యాసినో, స్లాట్స్, బెట్టింగ్ ఎక్స్ఛేంజ్ మరియు లాటరీతో సహా సమగ్రమైన ఆన్‌లైన్ బెట్టింగ్ అనుభవాన్ని ఆస్వాదించడానికి 12BET తో ఇప్పుడే సైన్ అప్ చేయండి. సులభమైన డిపాజిట్లు మరియు విత్డ్రావాల్ తో న్యూ మెంబెర్స్ కోసం ప్రత్యేకమైన ప్రమోషన్‌లను అన్‌లాక్ చేయండి!</value>
+  </data>
+  <data name="Meta_OgTitle" xml:space="preserve">
+    <value>ఈరోజే 12BET లో సైన్ అప్ చేయండి మరియు స్పోర్ట్స్ బెట్టింగ్, క్యాసినో గేమ్స్, స్లాట్స్ మరియు లాటరీని ఒకే చోట ఆనందించండి!</value>
+  </data>
+  <data name="Meta_OgDescription" xml:space="preserve">
+    <value>స్పోర్ట్స్, లైవ్ క్యాసినో, స్లాట్స్, బెట్టింగ్ ఎక్స్ఛేంజ్ మరియు లాటరీతో సహా సమగ్రమైన ఆన్‌లైన్ బెట్టింగ్ అనుభవాన్ని ఆస్వాదించడానికి 12BET తో ఇప్పుడే సైన్ అప్ చేయండి. సులభమైన డిపాజిట్లు మరియు విత్డ్రావాల్ తో న్యూ మెంబెర్స్ కోసం ప్రత్యేకమైన ప్రమోషన్‌లను అన్‌లాక్ చేయండి!</value>
+  </data>
+</root>

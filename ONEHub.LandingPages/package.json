@@ -1,0 +1,32 @@
+{
+  "name": "fanex-affiliate-landing-pages",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "watch": "sass src/scss/site.scss:wwwroot/dist/dev/site.css --watch",
+    "build:dev": "npm run build:css:dev && webpack --mode development",
+    "build:prod": "npm run build:css:prod && webpack --mode production",
+    "build:css:dev": "sass src/scss/site.scss:wwwroot/dist/dev/site.css --style expanded --source-map",
+    "build:css:prod": "sass src/scss/site.scss:wwwroot/dist/prod/site.css --style compressed",
+    "dev": "concurrently \"npm run watch\" \"dotnet watch run\"",
+    "build:js:prod": "webpack --mode production",
+    "build:js:dev": "webpack --mode development",
+    "watch:js": "webpack --mode development --watch"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "jquery-validation": "^1.19.5",
+    "jquery-validation-unobtrusive": "^3.2.12",
+    "libphonenumber-js": "^1.12.15",
+    "swiper": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.33",
+    "concurrently": "^8.2.2",
+    "sass": "^1.69.0",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.0"
+  }
+}
