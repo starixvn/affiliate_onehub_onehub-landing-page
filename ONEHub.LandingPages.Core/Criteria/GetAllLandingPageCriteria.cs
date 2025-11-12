@@ -6,7 +6,7 @@ public class GetAllLandingPageCriteria : CriteriaBase
 {
     public bool IsPreview { get; set; }
 
-    public override string GetSettingKey() => "Aff_LandingPage_Builder_AllSel";
+    public override string GetSettingKey() => "OH_LandingPage_Builder_AllSel";
 
     public override bool IsValid() => true;
 }

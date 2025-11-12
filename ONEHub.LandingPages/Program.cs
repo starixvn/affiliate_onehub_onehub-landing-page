@@ -92,7 +92,7 @@ DbSettingProviderManager
     .Run();
 // Configure data protection
 const string DataProtectionKeys = "DataProtectionKeys";
-const string ApplicationName = "Aff.12B.LandingPage";
+const string ApplicationName = "ONEHub.LandingPage";
 var appName = builder.Configuration.GetValue<string>("fanex.caching.redis:ApplicationName");
 
 if (!string.IsNullOrEmpty(appName))

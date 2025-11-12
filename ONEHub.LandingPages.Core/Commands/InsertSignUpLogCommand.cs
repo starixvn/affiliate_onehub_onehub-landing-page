@@ -25,7 +25,7 @@ public class InsertSignUpLogCommand: BaseNonQueryCommand
     public string ApiUrl { get; set; } = string.Empty;
     public string SignUpUrl { get; set; } = string.Empty;
     public string UserAgent { get; set; } = string.Empty;
-    public override string GetSettingKey() => "Aff_LandingPage_SignUp";
+    public override string GetSettingKey() => "OH_LandingPage_SignUp";
 
     public override bool IsValid() => true;
 }
