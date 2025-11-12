@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
 using ONEHub.LandingPages.Core.Constants;
-using ONEHub.LandingPages.Core.Converters;
 using ONEHub.LandingPages.Core.Models;
 using ONEHub.LandingPages.Core.Services.Interfaces;
+using ONEHub.Shared.Converters;
 using ONEHub.Shared.Services.Interfaces;
 
 namespace ONEHub.LandingPages.Core.Services;

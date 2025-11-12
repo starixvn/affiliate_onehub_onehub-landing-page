@@ -1,5 +1,5 @@
 ﻿using System.Text.Json.Serialization;
-using ONEHub.LandingPages.Core.Converters;
+using ONEHub.Shared.Converters;
 
 namespace ONEHub.LandingPages.Core.Models;
 
