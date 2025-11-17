@@ -62,7 +62,7 @@
                 </div>
                 <div class="input-box">
                     <span class="required-tip" aria-label="@UI.A11y_Required">*</span>
-                    <input asp-for="PhoneNo" placeholder="@UI.Form_PhoneNumber" autocomplete="tel" />
+                    <input asp-for="PhoneNo" type="number" placeholder="@UI.Form_PhoneNumber" autocomplete="tel" />
                 </div>
             </div>
             <span class="required-text" asp-validation-for="PhoneNo"></span>

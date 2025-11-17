@@ -273,4 +273,10 @@
   <data name="Meta_OgDescription" xml:space="preserve">
     <value>สมัคร 12BET ง่าย พร้อมสนุกกับการเดิมพันกีฬา คาสิโนสด สล็อต อีสปอร์ต และลอตเตอรี่ รวมโปรโมชั่นพิเศษสำหรับสมาชิกใหม่ ฝาก-ถอนรวดเร็ว ปลอดภัยทุกขั้นตอน</value>
   </data>
+  <data name="Validation_PhoneLengthRange" xml:space="preserve">
+    <value>หมายเลขโทรศัพท์ที่คุณกรอกไม่ถูกต้อง ระหว่าง {0}-{1} หลัก</value>
+  </data>
+  <data name="Validation_PhoneLength" xml:space="preserve">
+    <value>หมายเลขโทรศัพท์ที่คุณกรอกไม่ถูกต้อง ระหว่าง {0} หลัก</value>
+  </data>
 </root>

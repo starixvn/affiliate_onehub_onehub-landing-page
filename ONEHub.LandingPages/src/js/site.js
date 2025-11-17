@@ -8,8 +8,6 @@
 import $ from 'jquery';
 import 'jquery-validation';
 import 'jquery-validation-unobtrusive';
-import { parsePhoneNumberFromString } from 'libphonenumber-js/core';
-import metadata from 'libphonenumber-js/metadata.mobile.json';
 import './capcha.js';
 import { tracking } from './tracker';
 
@@ -105,11 +103,25 @@ function initializeSite() {
  */
 function setupPhoneValidation() {
     // Register phone validation adapter
-    $.validator.unobtrusive.adapters.add("phonenocountry", ["countryproperty"], function (options) {
+    $.validator.unobtrusive.adapters.add("phonenocountry", ["countryproperty", "map"], function (options) {
         options.rules["phonenocountry"] = {
-            countryProperty: options.params.countryproperty
+            countryProperty: options.params.countryproperty,
+            map: options.params.map
         };
-        options.messages["phonenocountry"] = options.message;
+
+        const countryCodeFieldName = `${options.params.countryproperty}`;
+        const countryCode = $(`[name='${countryCodeFieldName}']`).val();
+
+        const countries = JSON.parse(options.params.map);
+        const country = countries.find(t =>
+            t.CountryCode.toLowerCase() === countryCode.toLowerCase());
+
+        const rangeText = (country.MinLength === country.MaxLength)
+            ? `${country.MinLength}`
+            : `${country.MinLength}-${country.MaxLength}`;
+        const message = options.message.replace("{0}", rangeText);
+
+        options.messages["phonenocountry"] = message;
     });
 
     // Add phone validation method
@@ -121,19 +133,20 @@ function setupPhoneValidation() {
         try {
             const countryCodeFieldName = `${params.countryProperty}`;
             const countryCode = $(`[name='${countryCodeFieldName}']`).val();
-
             if (!countryCode) {
                 return true;
             }
 
-            const phoneNumber = parsePhoneNumberFromString(value, countryCode, metadata);
-            if (!phoneNumber || !phoneNumber.isValid()) {
-                return false;
+            const countries = JSON.parse(params.map);
+            const country = countries.find(t =>
+                t.CountryCode.toLowerCase() === countryCode.toLowerCase());
+
+            if (!country) {
+                return true;
             }
 
-            const phoneType = phoneNumber.getType();
-            return phoneType === SITE_CONFIG.PHONE_TYPES.MOBILE ||
-                phoneType === SITE_CONFIG.PHONE_TYPES.FIXED_LINE_OR_MOBILE;
+            const len = value.length;
+            return len >= country.MinLength && len <= country.MaxLength;
         } catch (error) {
             console.error('Phone validation error:', error);
             return false;

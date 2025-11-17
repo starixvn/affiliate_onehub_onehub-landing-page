@@ -4,7 +4,7 @@ WORKDIR /src
 COPY *.sln .
 COPY ONEHub.LandingPages.Consumer/ONEHub.LandingPages.Consumer.csproj ./ONEHub.LandingPages.Consumer/
 COPY ONEHub.LandingPages.Core/ONEHub.LandingPages.Core.csproj ./ONEHub.LandingPages.Core/
-COPY ONEHub.Shared/ONEHub.Shared.csproj ./ONEHub.Shared/
+COPY onehub-shared/ONEHub.Shared/ONEHub.Shared.csproj ./onehub-shared/ONEHub.Shared/
 
 RUN dotnet nuget add source https://nuget.nexdev.net/api/v2
 
@@ -13,7 +13,7 @@ RUN --mount=type=cache,target=/root/.nuget/packages \
 
 COPY ONEHub.LandingPages.Consumer/. ./ONEHub.LandingPages.Consumer/
 COPY ONEHub.LandingPages.Core/. ./ONEHub.LandingPages.Core/
-COPY ONEHub.Shared/. ./ONEHub.Shared/
+COPY onehub-shared/ONEHub.Shared/. ./onehub-shared/ONEHub.Shared/
 
 WORKDIR /src/ONEHub.LandingPages.Consumer
 

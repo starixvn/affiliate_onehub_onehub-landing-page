@@ -29,7 +29,7 @@ namespace ONEHub.LandingPages.Core.Resources {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal UI() {
+        public UI() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace ONEHub.LandingPages.Core.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ONEHub.LandingPages.Core.Resources.UI", typeof(UI).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Fanex.Affiliate.LandingPages.Core.Resources.UI", typeof(UI).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -489,6 +489,24 @@ namespace ONEHub.LandingPages.Core.Resources {
         public static string Validation_PhoneInvalidForCountry {
             get {
                 return ResourceManager.GetString("Validation_PhoneInvalidForCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone number you entered is incorrect, should be between {0} digits.
+        /// </summary>
+        public static string Validation_PhoneLength {
+            get {
+                return ResourceManager.GetString("Validation_PhoneLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone number you entered is incorrect, should be between {0}-{1} digits.
+        /// </summary>
+        public static string Validation_PhoneLengthRange {
+            get {
+                return ResourceManager.GetString("Validation_PhoneLengthRange", resourceCulture);
             }
         }
         

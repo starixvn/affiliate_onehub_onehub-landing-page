@@ -273,4 +273,10 @@
   <data name="Meta_OgDescription" xml:space="preserve">
     <value>立即注册 12BET，享受全面的在线博彩体验，包括体育、真人赌场、老虎机、博彩交易所和彩票。解锁专属于新会员的独家促销，轻松存款和取款！</value>
   </data>
+  <data name="Validation_PhoneLengthRange" xml:space="preserve">
+    <value>您输入的手机号格式有误，介于{0}-{1}位数字</value>
+  </data>
+  <data name="Validation_PhoneLength" xml:space="preserve">
+    <value>您输入的手机号格式有误，介于{0}位数字</value>
+  </data>
 </root>

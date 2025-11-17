@@ -273,4 +273,10 @@
   <data name="Meta_OgDescription" xml:space="preserve">
     <value>Đăng ký ngay tài khoản 12BET để tận hưởng trải nghiệm cá cược trực tuyến toàn diện, bao gồm thể thao, sòng bạc trực tuyến, Slot/ Nổ hũ,và xổ số 3 miền. Tận hưởng các chương trình khuyến mãi độc quyền dành cho thành viên mới, nạp và rút tiền nhanh chóng thuận tiện!</value>
   </data>
+  <data name="Validation_PhoneLengthRange" xml:space="preserve">
+    <value>Số điện thoại bạn đã nhập không đúng, phải có giữa {0}-{1} chữ số</value>
+  </data>
+  <data name="Validation_PhoneLength" xml:space="preserve">
+    <value>Số điện thoại bạn đã nhập không đúng, phải có giữa {0} chữ số</value>
+  </data>
 </root>

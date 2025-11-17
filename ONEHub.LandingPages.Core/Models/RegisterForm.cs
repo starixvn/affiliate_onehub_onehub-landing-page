@@ -30,7 +30,7 @@ public class RegisterForm
     public string? Email { get; set; }
 
     [Required(ErrorMessageResourceName = "Validation_PhoneRequired", ErrorMessageResourceType = typeof(UI))]
-    [PhoneNumberByCountry("CountryCode", ErrorMessageResourceName = "Validation_PhoneInvalidForCountry", ErrorMessageResourceType = typeof(UI))]
+    [PhoneLengthByCountry("CountryCode")]
     public string PhoneNo { get; set; } = string.Empty;
 
     [Required]

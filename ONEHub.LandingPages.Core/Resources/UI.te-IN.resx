@@ -273,4 +273,10 @@
   <data name="Meta_OgDescription" xml:space="preserve">
     <value>స్పోర్ట్స్, లైవ్ క్యాసినో, స్లాట్స్, బెట్టింగ్ ఎక్స్ఛేంజ్ మరియు లాటరీతో సహా సమగ్రమైన ఆన్‌లైన్ బెట్టింగ్ అనుభవాన్ని ఆస్వాదించడానికి 12BET తో ఇప్పుడే సైన్ అప్ చేయండి. సులభమైన డిపాజిట్లు మరియు విత్డ్రావాల్ తో న్యూ మెంబెర్స్ కోసం ప్రత్యేకమైన ప్రమోషన్‌లను అన్‌లాక్ చేయండి!</value>
   </data>
+  <data name="Validation_PhoneLengthRange" xml:space="preserve">
+    <value>మీరు ఎంటర్ చేసిన ఫోన్ నంబర్ తప్పు, {0}-{1} అంకెల మధ్య ఉండాలి</value>
+  </data>
+  <data name="Validation_PhoneLength" xml:space="preserve">
+    <value>మీరు ఎంటర్ చేసిన ఫోన్ నంబర్ తప్పు, {0} అంకెల మధ్య ఉండాలి</value>
+  </data>
 </root>

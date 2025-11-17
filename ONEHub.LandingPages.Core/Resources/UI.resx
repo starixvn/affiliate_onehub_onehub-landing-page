@@ -273,4 +273,10 @@
   <data name="Meta_OgDescription" xml:space="preserve">
     <value>Experience Comprehensive Betting with 12BET: Enjoy sports betting, live casino games, slots, e-sports, and lottery, betting exchange, all in one place. Take advantage of exciting promotions, easy deposits and withdrawals, and a secure &amp; trustworthy platform</value>
   </data>
+  <data name="Validation_PhoneLengthRange" xml:space="preserve">
+    <value>Phone number you entered is incorrect, should be between {0}-{1} digits</value>
+  </data>
+  <data name="Validation_PhoneLength" xml:space="preserve">
+    <value>Phone number you entered is incorrect, should be between {0} digits</value>
+  </data>
 </root>
