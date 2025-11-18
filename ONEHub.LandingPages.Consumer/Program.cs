@@ -86,7 +86,7 @@ await host.RunAsync();
 
 static void RouteToAction(WebApplication host)
 {
-    host.MapGet("/", () => "Affiliate.Link.Consumer running!");
+    host.MapGet("/", () => "Landing Page Consumer running!");
     host.MapGet("/sentry", async () =>
     {
         var logService = host.Services.GetRequiredService<ILogProvider>();

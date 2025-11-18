@@ -143,7 +143,9 @@ public class SignUpService(ILogProvider logService,
         var stopwatch = Stopwatch.StartNew();
         var (signUpResponse, signUp) = await ProcessSignUpAPI(registerForm);
         stopwatch.Stop();
-        
+
+        signUp.Email = MaskEmail(signUp.Email ?? string.Empty);
+        signUp.PhoneNo = MaskPhone(signUp.PhoneNo);
         var signUpRequest = new SignUpRequest
         {
             SignUpData = signUp,
@@ -278,5 +280,38 @@ public class SignUpService(ILogProvider logService,
         };
 
         return signUp;
+    }
+
+    public static string MaskPhone(string phone)
+    {
+        if (string.IsNullOrEmpty(phone) || phone.Length <= 4)
+        {
+            return phone;
+        }
+
+        const int visibleCount = 4;
+        int maskCount = phone.Length - visibleCount;
+
+        return new string('*', maskCount) + phone.Substring(maskCount);
+    }
+
+    public static string MaskEmail(string email)
+    {
+        if (string.IsNullOrEmpty(email))
+        {
+            return email;
+        }
+
+        int atIndex = email.IndexOf('@');
+        if (atIndex <= 1)
+        {
+            return email;
+        }
+
+        string firstChar = email.Substring(0, 1);
+        string masked = new string('*', atIndex - 1);
+        string domain = email.Substring(atIndex);
+
+        return firstChar + masked + domain;
     }
 }

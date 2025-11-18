@@ -22,7 +22,6 @@ using Serilog;
 using SharpRaven;
 using StackExchange.Redis;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseSerilog((context, loggerConfiguration) =>
