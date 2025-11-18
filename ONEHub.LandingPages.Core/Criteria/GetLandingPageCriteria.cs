@@ -10,7 +10,7 @@ public class GetLandingPageCriteria : CriteriaBase
 
     public bool IsPreview { get; set; }
 
-    public override string GetSettingKey() => "OH_LandingPage_Builder_Sel";
+    public override string GetSettingKey() => "OH_PageBuilder_Sel";
 
     public override bool IsValid() => !string.IsNullOrWhiteSpace(PageCode);
 }

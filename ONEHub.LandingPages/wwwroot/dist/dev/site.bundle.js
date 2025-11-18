@@ -448,19 +448,11 @@ if ( true && module.exports) {
 /* harmony export */   iConvertTracker: () => (/* binding */ iConvertTracker)
 /* harmony export */ });
 const iConvertTracker = ({ eventName, depositType, amount, currency, userName, eventValue, }) => {
-    var _a, _b, _c, _d;
+    var _a, _b, _c;
     switch (eventName) {
         case 'Purchase':
-            if (depositType === 'StartTrial') {
+            if (depositType === 'StartTrial' || depositType === 'redeposit') {
                 (_a = window.dataLayer) === null || _a === void 0 ? void 0 : _a.push({
-                    event: 'iConvert-deposit-success',
-                    depositValue: String(amount) || '0',
-                    depositCurrency: currency || 'THB',
-                    userID: userName,
-                });
-            }
-            else if (depositType === 'redeposit') {
-                (_b = window.dataLayer) === null || _b === void 0 ? void 0 : _b.push({
                     event: 'iConvert-deposit-success',
                     depositValue: String(amount) || '0',
                     depositCurrency: currency || 'THB',
@@ -469,13 +461,13 @@ const iConvertTracker = ({ eventName, depositType, amount, currency, userName, e
             }
             break;
         case 'CompleteRegistration':
-            (_c = window.dataLayer) === null || _c === void 0 ? void 0 : _c.push({
+            (_b = window.dataLayer) === null || _b === void 0 ? void 0 : _b.push({
                 event: 'iConvert-registration-success',
                 userID: eventValue,
             });
             break;
         case 'Login':
-            (_d = window.dataLayer) === null || _d === void 0 ? void 0 : _d.push({
+            (_c = window.dataLayer) === null || _c === void 0 ? void 0 : _c.push({
                 event: 'iConvert-login-success',
                 userID: eventValue,
             });
@@ -622,10 +614,8 @@ const OperaPixelTracker = (eventName) => {
 /* harmony import */ var jquery_validation__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery_validation__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var jquery_validation_unobtrusive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery-validation-unobtrusive */ "./node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js");
 /* harmony import */ var jquery_validation_unobtrusive__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery_validation_unobtrusive__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var libphonenumber_js_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libphonenumber-js/core */ "./node_modules/libphonenumber-js/core/index.js");
-/* harmony import */ var libphonenumber_js_metadata_mobile_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! libphonenumber-js/metadata.mobile.json */ "./node_modules/libphonenumber-js/metadata.mobile.json.js");
-/* harmony import */ var _capcha_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./capcha.js */ "./src/js/capcha.js");
-/* harmony import */ var _tracker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tracker */ "./src/js/tracker.ts");
+/* harmony import */ var _capcha_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./capcha.js */ "./src/js/capcha.js");
+/* harmony import */ var _tracker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tracker */ "./src/js/tracker.ts");
 /* module decorator */ module = __webpack_require__.hmd(module);
 /**
  * Site JavaScript Module
@@ -633,8 +623,6 @@ const OperaPixelTracker = (eventName) => {
  * @author Fanex Affiliate Team
  * @version 1.0.0
  */
-
-
 
 
 
@@ -734,11 +722,25 @@ function initializeSite() {
  */
 function setupPhoneValidation() {
     // Register phone validation adapter
-    jquery__WEBPACK_IMPORTED_MODULE_0___default().validator.unobtrusive.adapters.add("phonenocountry", ["countryproperty"], function (options) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default().validator.unobtrusive.adapters.add("phonenocountry", ["countryproperty", "map"], function (options) {
         options.rules["phonenocountry"] = {
-            countryProperty: options.params.countryproperty
+            countryProperty: options.params.countryproperty,
+            map: options.params.map
         };
-        options.messages["phonenocountry"] = options.message;
+
+        const countryCodeFieldName = `${options.params.countryproperty}`;
+        const countryCode = jquery__WEBPACK_IMPORTED_MODULE_0___default()(`[name='${countryCodeFieldName}']`).val();
+
+        const countries = JSON.parse(options.params.map);
+        const country = countries.find(t =>
+            t.CountryCode.toLowerCase() === countryCode.toLowerCase());
+
+        const rangeText = (country.MinLength === country.MaxLength)
+            ? `${country.MinLength}`
+            : `${country.MinLength}-${country.MaxLength}`;
+        const message = options.message.replace("{0}", rangeText);
+
+        options.messages["phonenocountry"] = message;
     });
 
     // Add phone validation method
@@ -750,19 +752,20 @@ function setupPhoneValidation() {
         try {
             const countryCodeFieldName = `${params.countryProperty}`;
             const countryCode = jquery__WEBPACK_IMPORTED_MODULE_0___default()(`[name='${countryCodeFieldName}']`).val();
-
             if (!countryCode) {
                 return true;
             }
 
-            const phoneNumber = (0,libphonenumber_js_core__WEBPACK_IMPORTED_MODULE_3__.parsePhoneNumberFromString)(value, countryCode, libphonenumber_js_metadata_mobile_json__WEBPACK_IMPORTED_MODULE_4__["default"]);
-            if (!phoneNumber || !phoneNumber.isValid()) {
-                return false;
+            const countries = JSON.parse(params.map);
+            const country = countries.find(t =>
+                t.CountryCode.toLowerCase() === countryCode.toLowerCase());
+
+            if (!country) {
+                return true;
             }
 
-            const phoneType = phoneNumber.getType();
-            return phoneType === SITE_CONFIG.PHONE_TYPES.MOBILE ||
-                phoneType === SITE_CONFIG.PHONE_TYPES.FIXED_LINE_OR_MOBILE;
+            const len = value.length;
+            return len >= country.MinLength && len <= country.MaxLength;
         } catch (error) {
             console.error('Phone validation error:', error);
             return false;
@@ -777,7 +780,7 @@ function handleSubmitSuccess() {
 
     if (isSuccessfulValue === "true") {
         const username = jquery__WEBPACK_IMPORTED_MODULE_0___default()(SITE_CONFIG.SELECTORS.USERNAME_INPUT).val();
-        (0,_tracker__WEBPACK_IMPORTED_MODULE_6__.tracking)({
+        (0,_tracker__WEBPACK_IMPORTED_MODULE_4__.tracking)({
            eventName: 'CompleteRegistration',
            eventValue: username
         });
@@ -840,7 +843,7 @@ function setupFormHandlers() {
                 handlePasswordEncoding();
 
                 const username = jquery__WEBPACK_IMPORTED_MODULE_0___default()(SITE_CONFIG.SELECTORS.USERNAME_INPUT).val();
-                (0,_tracker__WEBPACK_IMPORTED_MODULE_6__.tracking)({
+                (0,_tracker__WEBPACK_IMPORTED_MODULE_4__.tracking)({
                    eventName: 'registerSubmit',
                    eventValue: username
                 });
@@ -1724,7 +1727,7 @@ const YuriTracker = (eventName) => {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["jquery","libphonenumber-node_modules_libphonenumber-js_c","libphonenumber-node_modules_libphonenumber-js_es6_f","libphonenumber-node_modules_libphonenumber-js_e","vendor"], () => (__webpack_require__("./src/js/site.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["jquery","vendor"], () => (__webpack_require__("./src/js/site.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

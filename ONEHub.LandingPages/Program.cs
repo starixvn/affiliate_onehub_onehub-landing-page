@@ -61,6 +61,7 @@ RedisConnectionHelper.Initialize(builder.Configuration);
 builder.Services.AddSingleton<IConnectionMultiplexer>(sp => RedisConnectionHelper.Connection);
 builder.Services.AddSingleton<IRedisService, RedisService>();
 builder.Services.AddSingleton<ICacheKeyService, CacheKeyService>();
+builder.Services.AddSingleton<IQueueKeyService, QueueKeyService>();
 builder.Services.AddScoped<ITrackingSignUpService, TrackingSignUpService>();
 builder.Services.TryAddTransient<IUnderMaintenanceService, UnderMaintenanceService>();
 

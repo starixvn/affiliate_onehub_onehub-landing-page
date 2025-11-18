@@ -39,7 +39,7 @@ namespace ONEHub.LandingPages.Core.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Fanex.Affiliate.LandingPages.Core.Resources.UI", typeof(UI).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ONEHub.LandingPages.Core.Resources.UI", typeof(UI).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

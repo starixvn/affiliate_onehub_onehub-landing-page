@@ -9,4 +9,5 @@ public static class CacheKey
     public const string RecaptchaInfo = "RecaptchaInfo";
     public const string UnderMaintainInfo = "UnderMaintainInfo";
     public const string NumberCaptcha = "NumberCaptcha";
+    public const string TurnOnErrorQueueConsumer = "TurnOnErrorQueueConsumer";
 }

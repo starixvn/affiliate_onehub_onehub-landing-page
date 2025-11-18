@@ -1,10 +1,10 @@
 ﻿using EasyNetQ;
 using EasyNetQ.Consumer;
 using EasyNetQ.Topology;
-using ONEHub.LandingPages.Core.Constants;
+using ONEbook.UM.Services;
+using ONEHub.LandingPages.Core;
 using ONEHub.LandingPages.Core.Models;
 using ONEHub.LandingPages.Core.Services.Interfaces;
-using ONEbook.UM.Services;
 using ONEHub.Shared.Services.Interfaces;
 
 namespace ONEHub.LandingPages.Consumer;
@@ -14,6 +14,8 @@ public sealed class SignUpLogDLQWorker(
     IMaintenanceService maintenanceService,
     ITrackingSignUpService trackingSignUpService,
     IRedisService redisService,
+    ICacheKeyService cacheKeyService,
+    IQueueKeyService queueKeyService,
     ILogProvider logService) : BackgroundService
 {
     private IDisposable? consumerHandle;
@@ -74,7 +76,8 @@ public sealed class SignUpLogDLQWorker(
 
     private async Task<bool> IsTurnOffConsumer()
     {
-        var isEnableConsumeFromCache = await redisService.GetAsync<bool>(Settings.TurnOnErrorQueueConsumer);
+        var cacheKey = cacheKeyService.GetFullKey(CacheKey.TurnOnErrorQueueConsumer);
+        var isEnableConsumeFromCache = await redisService.GetAsync<bool>(cacheKey);
         return IsCurrentlyUnderMaintenance() || !isEnableConsumeFromCache;
     }
 
@@ -114,15 +117,15 @@ public sealed class SignUpLogDLQWorker(
     {
         await Task.Delay(InitialDelayMilliseconds, stoppingToken).ConfigureAwait(false);
         // Setup exchanges and queues
-        var errorExchange = await bus.Advanced.ExchangeDeclareAsync(Settings.ErrorExchangeName, ExchangeType.Direct);
-        errorQueue = await bus.Advanced.QueueDeclareAsync(Settings.ErrorQueueName, c => c
+        var errorExchange = await bus.Advanced.ExchangeDeclareAsync(queueKeyService.ErrorExchangeName, ExchangeType.Direct);
+        errorQueue = await bus.Advanced.QueueDeclareAsync(queueKeyService.ErrorQueueName, c => c
             .AsDurable(true)
             .AsExclusive(false)
             .AsAutoDelete(false)
             .WithArgument("x-queue-type", "quorum")
         );
         
-        await bus.Advanced.BindAsync(errorExchange, errorQueue, Settings.RoutingKey);
+        await bus.Advanced.BindAsync(errorExchange, errorQueue, queueKeyService.RoutingKey);
 
         StartConsumer();
 

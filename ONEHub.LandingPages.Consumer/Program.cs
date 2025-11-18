@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using ONEbook.UM.DependencyInjection;
 using ONEbook.UM.Services;
 using ONEHub.LandingPages.Consumer;
+using ONEHub.LandingPages.Core;
 using ONEHub.LandingPages.Core.Constants;
 using ONEHub.LandingPages.Core.Extensions;
 using ONEHub.LandingPages.Core.Models;
@@ -48,6 +49,8 @@ RedisConnectionHelper.Initialize(builder.Configuration);
 builder.Services.AddSingleton<IConnectionMultiplexer>(sp => RedisConnectionHelper.Connection);
 builder.Services.AddSingleton<IRedisService, RedisService>();
 builder.Services.AddSingleton<ICacheKeyService, CacheKeyService>();
+builder.Services.AddSingleton<IRabbitBus, ONEHub.Shared.Services.RabbitBus>();
+builder.Services.AddSingleton<IQueueKeyService, QueueKeyService>();
 builder.Services.AddSingleton<ILandingPageService, LandingPageService>();
 builder.Services.AddSingleton<Fanex.Logging.ILogger, Logger>();
 builder.Services.AddSingleton<ILogProvider, LogProvider>();
@@ -79,7 +82,7 @@ var host = builder.Build();
 
 RouteToAction(host);
 
-host.Run();
+await host.RunAsync();
 
 static void RouteToAction(WebApplication host)
 {
@@ -93,14 +96,18 @@ static void RouteToAction(WebApplication host)
     host.MapGet("/OnDQLQueueConsumer", async () =>
     {
         var redisService = host.Services.GetRequiredService<IRedisService>();
-        var result = await redisService.SetAsync(Settings.TurnOnErrorQueueConsumer, true);
+        var cacheKeyService = host.Services.GetRequiredService<ICacheKeyService>();
+        var cachekey = cacheKeyService.GetFullKey(CacheKey.TurnOnErrorQueueConsumer);
+        var result = await redisService.SetAsync(cachekey, true);
         return Results.Ok(result);
     });
 
     host.MapGet("/OffDQLQueueConsumer", async () =>
     {
         var redisService = host.Services.GetRequiredService<IRedisService>();
-        var result = await redisService.SetAsync(Settings.TurnOnErrorQueueConsumer, false);
+        var cacheKeyService = host.Services.GetRequiredService<ICacheKeyService>();
+        var cachekey = cacheKeyService.GetFullKey(CacheKey.TurnOnErrorQueueConsumer);
+        var result = await redisService.SetAsync(cachekey, false);
         return Results.Ok(result);
     });
 }

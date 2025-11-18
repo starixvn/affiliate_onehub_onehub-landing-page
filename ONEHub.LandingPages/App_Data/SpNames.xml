@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Functions SiteId="2000003" SiteName="ONEHub">
   <Function Name="OH-LandingPage">
-    <Setting Key="OH_LandingPage_Builder_Sel" SpName="OH_LandingPage_Builder_Sel" DbName="DBOH.ONEHub.wsv_oh" Plain="0" />
-	  <Setting Key="OH_LandingPage_SignUp" SpName="OH_LandingPage_SignUp" DbName="DBOH.ONEHub.wsv_oh" Plain="0" />
-	  <Setting Key="OH_LandingPage_Builder_AllSel" SpName="OH_LandingPage_Builder_AllSel" DbName="DBOH.ONEHub.wsv_oh" Plain="0" />
+    <Setting Key="OH_PageBuilder_Sel" SpName="OH_PageBuilder_Sel_UAT1" DbName="DBOH.ONEHub.wsv_oh" Plain="0" />
+	  <Setting Key="OH_SignUp" SpName="OH_SignUp_UAT1" DbName="DBOH.ONEHub.wsv_oh" Plain="0" />
+	  <Setting Key="OH_PageBuilder_AllSel" SpName="OH_PageBuilder_AllSel_UAT1" DbName="DBOH.ONEHub.wsv_oh" Plain="0" />
   </Function>
 </Functions>

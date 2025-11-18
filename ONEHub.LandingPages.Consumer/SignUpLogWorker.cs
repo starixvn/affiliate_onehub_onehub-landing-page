@@ -1,10 +1,9 @@
 ﻿using EasyNetQ;
 using EasyNetQ.Consumer;
 using EasyNetQ.Topology;
-using ONEHub.LandingPages.Core.Constants;
+using ONEbook.UM.Services;
 using ONEHub.LandingPages.Core.Models;
 using ONEHub.LandingPages.Core.Services.Interfaces;
-using ONEbook.UM.Services;
 using ONEHub.Shared.Services.Interfaces;
 
 namespace ONEHub.LandingPages.Consumer;
@@ -13,6 +12,7 @@ public sealed class SignUpLogWorker(
     IBus bus,
     IMaintenanceService maintenanceService,
     ITrackingSignUpService trackingSignUpService,
+    IQueueKeyService queueKeyService,
     ILogProvider logService) : BackgroundService
 {
     private IDisposable? consumerHandle;
@@ -122,14 +122,14 @@ public sealed class SignUpLogWorker(
             errorMessage = $"Moving message to dead-letter queue after {retry} retries.";
             var errorMsg = new Message<SignUpRequest>(message.Body);
             errorMsg.Properties.Headers["x-retry"] = retry;
-            await bus.Advanced.PublishAsync(errorExchange, Settings.RoutingKey, false, errorMsg);
+            await bus.Advanced.PublishAsync(errorExchange, queueKeyService.RoutingKey, false, errorMsg);
         }
         else
         {
             errorMessage = $"Retrying message. Attempt {retry}.";
             var retryMsg = new Message<SignUpRequest>(message.Body);
             retryMsg.Properties.Headers["x-retry"] = retry;
-            await bus.Advanced.PublishAsync(retryExchange, Settings.RoutingKey, false, retryMsg);
+            await bus.Advanced.PublishAsync(retryExchange, queueKeyService.RoutingKey, false, retryMsg);
         }
 
         return errorMessage;
@@ -139,36 +139,36 @@ public sealed class SignUpLogWorker(
     {
         await Task.Delay(InitialDelayMilliseconds, stoppingToken).ConfigureAwait(false);
         // Setup exchanges and queues
-        var mainExchange = await bus.Advanced.ExchangeDeclareAsync(Settings.MainExchangeName, ExchangeType.Direct);
-        retryExchange = await bus.Advanced.ExchangeDeclareAsync(Settings.RetryExchangeName, ExchangeType.Direct);
-        errorExchange = await bus.Advanced.ExchangeDeclareAsync(Settings.ErrorExchangeName, ExchangeType.Direct);
+        var mainExchange = await bus.Advanced.ExchangeDeclareAsync(queueKeyService.MainExchangeName, ExchangeType.Direct);
+        retryExchange = await bus.Advanced.ExchangeDeclareAsync(queueKeyService.RetryExchangeName, ExchangeType.Direct);
+        errorExchange = await bus.Advanced.ExchangeDeclareAsync(queueKeyService.ErrorExchangeName, ExchangeType.Direct);
 
-        mainQueue = await bus.Advanced.QueueDeclareAsync(Settings.MainQueueName, c => c
+        mainQueue = await bus.Advanced.QueueDeclareAsync(queueKeyService.MainQueueName, c => c
             .AsDurable(true)
             .AsExclusive(false)
             .AsAutoDelete(false)
             .WithArgument("x-queue-type", "quorum")
         );
 
-        var retryQueue = await bus.Advanced.QueueDeclareAsync(Settings.RetryQueueName, c => c
+        var retryQueue = await bus.Advanced.QueueDeclareAsync(queueKeyService.RetryQueueName, c => c
             .AsDurable(true)
             .AsExclusive(false)
             .AsAutoDelete(false)
             .WithArgument("x-queue-type", "quorum")
-            .WithArgument("x-dead-letter-exchange", Settings.MainExchangeName)
+            .WithArgument("x-dead-letter-exchange", queueKeyService.MainExchangeName)
             .WithArgument("x-message-ttl", timeToReQueue)
         );
 
-        var errorQueue = await bus.Advanced.QueueDeclareAsync(Settings.ErrorQueueName, c => c
+        var errorQueue = await bus.Advanced.QueueDeclareAsync(queueKeyService.ErrorQueueName, c => c
             .AsDurable(true)
             .AsExclusive(false)
             .AsAutoDelete(false)
             .WithArgument("x-queue-type", "quorum")
         );
         
-        await bus.Advanced.BindAsync(mainExchange, mainQueue, Settings.RoutingKey);
-        await bus.Advanced.BindAsync(retryExchange, retryQueue, Settings.RoutingKey);
-        await bus.Advanced.BindAsync(errorExchange, errorQueue, Settings.RoutingKey);
+        await bus.Advanced.BindAsync(mainExchange, mainQueue, queueKeyService.RoutingKey);
+        await bus.Advanced.BindAsync(retryExchange, retryQueue, queueKeyService.RoutingKey);
+        await bus.Advanced.BindAsync(errorExchange, errorQueue, queueKeyService.RoutingKey);
 
         StartConsumer();
 
