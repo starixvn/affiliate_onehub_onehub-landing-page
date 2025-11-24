@@ -38,6 +38,9 @@ public class LandingPageModel(
     public string? AffCode { get; set; }
 
     [BindProperty(SupportsGet = true)]
+    public string? IdCode { get; set; }
+
+    [BindProperty(SupportsGet = true)]
     public string? FormCode { get; set; } = LandingPageConstants.DefaultFormCode;
 
     [BindProperty(SupportsGet = true)]
@@ -189,8 +192,10 @@ public class LandingPageModel(
         RegisterForm.AreaCode = $"+{landingPage.DialCode}";
         RegisterForm.CountryCode = landingPage.TargetCountryCode;
         RegisterForm.CurrencyId = landingPage.CurrencyId;
-        RegisterForm.AffClickId = ClickId ?? string.Empty;
-        RegisterForm.AffCode = AffCode ?? string.Empty;
+        RegisterForm.ClickId = ClickId ?? string.Empty;
+        RegisterForm.IdCode = IdCode ?? string.Empty;
+        RegisterForm.AffCode = RegisterForm.HasIdCode ? RegisterForm.IdCode : (AffCode ?? string.Empty);
+
         RegisterForm.TermsConditionsUrl = domainSettingService.GetTermsConditionsLink(languageCode);
         RegisterForm.IsTurnstileCaptchaEnabled = landingPage.IsTurnstileCaptchaEnabled;
         RegisterForm.TurnstileSiteKey = landingPage.TurnstileSiteKey;
@@ -329,7 +334,7 @@ public class LandingPageModel(
     private RegisterForm ProcessDataSubmitForm(RegisterForm registerForm)
     {
         registerForm.UserPwd = registerForm.Password;
-        registerForm.AffClickId = ClickId ?? string.Empty;
+        registerForm.ClickId = ClickId ?? string.Empty;
         registerForm.ReferralUrl = GetReferralHeader();
         registerForm.UserAgent = GetRequestHeader(LandingPageConstants.UserAgentHeader);
         registerForm.SignUpUrl = domainSettingService.GetCurrentLandingPageDomain(HttpContext.Request);

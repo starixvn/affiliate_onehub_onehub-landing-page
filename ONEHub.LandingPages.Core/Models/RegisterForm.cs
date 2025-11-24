@@ -43,7 +43,7 @@ public class RegisterForm
 
     [Required(ErrorMessageResourceName = "Validation_Capcha", ErrorMessageResourceType = typeof(UI))]
     public string ReCaptchaToken { get; set; } = string.Empty;
-    public string AffClickId { get; set; } = string.Empty;
+    public string ClickId { get; set; } = string.Empty;
     public string AffMediaLinkId { get; set; } = string.Empty;
     public string SignUpUrl { get; set; } = string.Empty;
     public string ReferralUrl { get; set; } = string.Empty;
@@ -52,6 +52,16 @@ public class RegisterForm
         AdditionalFields = nameof(UserLang),
         ErrorMessageResourceName = "Validation_AffiliateNotFound", ErrorMessageResourceType = typeof(UI))]
     public string? AffCode { get; set; }
+
+    public string? IdCode { get; set; }
+
+    public bool HasIdCode 
+    { 
+        get
+        {
+            return !string.IsNullOrWhiteSpace(IdCode);
+        } 
+    }
 
     public string UserAgent { get; set; } = string.Empty;
 

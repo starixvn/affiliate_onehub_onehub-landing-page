@@ -16,6 +16,7 @@
         <input asp-for="CountryCode" type="hidden" />
         <input asp-for="CurrencyId" type="hidden" />
         <input asp-for="UserLang" type="hidden" />
+        <input asp-for="HasIdCode" type="hidden" />
         <input type="hidden" id="IsSuccessful" name="IsSuccessful" value="@Model.IsSuccessful" />
         <input type="hidden" id="RedirectUrl" name="RedirectUrl" value="@Model.RedirectUrl" />
         <!-- Username -->
@@ -107,7 +108,7 @@
         <!-- Affiliate Code -->
         @if (formConfig.IsEnableAffiliate)
         {
-            var isAffCodeDisabled = Context.Request.Query.ContainsKey("AffCode");
+            var isAffCodeDisabled = Context.Request.Query.ContainsKey("AffCode") || Context.Request.Query.ContainsKey("IdCode");
             <div class="input-field">
                 <div class="input-info">
                     @UI.Validation_AffiliateCannotChange

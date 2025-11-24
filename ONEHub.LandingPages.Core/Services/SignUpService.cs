@@ -272,9 +272,10 @@ public class SignUpService(ILogProvider logService,
             CurrencyId = registerForm.CurrencyId,
             AreaCode = registerForm.AreaCode,
             AffCode = registerForm.AffCode,
+            IdCode = registerForm.IdCode,
             CaptchaType = registerForm.CaptchaType,
             ReCaptchaToken = registerForm.ReCaptchaToken,
-            AffClickId = registerForm.AffClickId,
+            AffClickId = registerForm.ClickId,
             ReferralUrl = registerForm.ReferralUrl,
             UserLang = registerForm.UserLang
         };

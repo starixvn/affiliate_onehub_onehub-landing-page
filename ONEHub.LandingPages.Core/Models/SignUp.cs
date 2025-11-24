@@ -12,6 +12,7 @@ public class SignUp
     public int CaptchaType { get; set; }
     public string ReCaptchaToken { get; set; } = string.Empty;
     public string? AffCode { get; set; }
+    public string? IdCode { get; set; }
     public string AffClickId { get; set; } = string.Empty;
     public string ReferralUrl { get; set; } = string.Empty;
 }
