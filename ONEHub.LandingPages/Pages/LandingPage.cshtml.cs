@@ -35,6 +35,12 @@ public class LandingPageModel(
     public string? ClickId { get; set; }
 
     [BindProperty(SupportsGet = true)]
+    public string? OClickId { get; set; }
+
+    [BindProperty(SupportsGet = true)]
+    public string? OLinkId { get; set; }
+
+    [BindProperty(SupportsGet = true)]
     public string? AffCode { get; set; }
 
     [BindProperty(SupportsGet = true)]
