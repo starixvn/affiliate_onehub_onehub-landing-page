@@ -55,6 +55,10 @@ public class RegisterForm
 
     public string? IdCode { get; set; }
 
+    public string OClickId { get; set; } = string.Empty;
+
+    public string OLinkId { get; set; } = string.Empty;
+
     public bool HasIdCode 
     { 
         get

@@ -201,6 +201,8 @@ public class LandingPageModel(
         RegisterForm.ClickId = ClickId ?? string.Empty;
         RegisterForm.IdCode = IdCode ?? string.Empty;
         RegisterForm.AffCode = RegisterForm.HasIdCode ? RegisterForm.IdCode : (AffCode ?? string.Empty);
+        RegisterForm.OClickId = OClickId ?? string.Empty;
+        RegisterForm.OLinkId = OLinkId ?? string.Empty;
 
         RegisterForm.TermsConditionsUrl = domainSettingService.GetTermsConditionsLink(languageCode);
         RegisterForm.IsTurnstileCaptchaEnabled = landingPage.IsTurnstileCaptchaEnabled;
@@ -341,6 +343,9 @@ public class LandingPageModel(
     {
         registerForm.UserPwd = registerForm.Password;
         registerForm.ClickId = ClickId ?? string.Empty;
+        registerForm.OClickId = OClickId ?? string.Empty;
+        registerForm.OLinkId = OLinkId ?? string.Empty;
+        registerForm.AffCode = registerForm.HasIdCode ? null : registerForm.AffCode;
         registerForm.ReferralUrl = GetReferralHeader();
         registerForm.UserAgent = GetRequestHeader(LandingPageConstants.UserAgentHeader);
         registerForm.SignUpUrl = domainSettingService.GetCurrentLandingPageDomain(HttpContext.Request);

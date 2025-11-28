@@ -14,6 +14,9 @@ public class InsertSignUpLogCommand: BaseNonQueryCommand
     public string ReCaptchaToken { get; set; } = string.Empty;
     public string? AffCode { get; set; }
     public string AffClickId { get; set; } = string.Empty;
+    public string? IdCode { get; set; }
+    public string OClickId { get; set; } = string.Empty;
+    public int OLinkId { get; set; }
     public string ReferralUrl { get; set; } = string.Empty;
     public string IP { get; set; } = string.Empty;
     public string ExtData { get; set; } = string.Empty;
