@@ -35,7 +35,7 @@ public static class CultureMappingConstants
             return DefaultCulture;
         }
 
-        return LanguageToCultureMapInternal.GetValueOrDefault(languageCode, DefaultCulture);
+        return LanguageToCultureMapInternal.GetValueOrDefault(languageCode.ToLowerInvariant(), DefaultCulture);
     }
 
     /// <summary>

@@ -13,9 +13,9 @@ public class LandingPageService(IDynamicRepository dynamicRepository, IRedisServ
     public async Task<LandingPage?> GetLandingPage(string pageCode, bool? refresh, bool? isPreview, int? pageId = null)
     {
         var isPreviewValue = (isPreview.HasValue && isPreview.Value);
-        var pageIdKey = pageId is null ? pageId.ToString() : string.Empty;
+        var pageIdKey = pageId is null ? string.Empty : pageId.ToString();
         var cacheKey = isPreviewValue
-                ? cacheKeyService.GetFullKey(CacheKey.LandingPage, pageCode, pageIdKey)
+                ? cacheKeyService.GetFullKey(CacheKey.LandingPagePreview, pageCode, pageIdKey)
                 : cacheKeyService.GetFullKey(CacheKey.LandingPage, pageCode);
         LandingPage? landingPage = null;
         if (!refresh.HasValue || !refresh.Value)

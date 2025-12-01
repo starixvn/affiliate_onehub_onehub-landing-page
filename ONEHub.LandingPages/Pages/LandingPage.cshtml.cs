@@ -38,7 +38,7 @@ public class LandingPageModel(
     public string? OClickId { get; set; }
 
     [BindProperty(SupportsGet = true)]
-    public string? OLinkId { get; set; }
+    public int? OLinkId { get; set; }
 
     [BindProperty(SupportsGet = true)]
     public string? AffCode { get; set; }
@@ -202,7 +202,7 @@ public class LandingPageModel(
         RegisterForm.IdCode = IdCode ?? string.Empty;
         RegisterForm.AffCode = RegisterForm.HasIdCode ? RegisterForm.IdCode : (AffCode ?? string.Empty);
         RegisterForm.OClickId = OClickId ?? string.Empty;
-        RegisterForm.OLinkId = OLinkId ?? string.Empty;
+        RegisterForm.OLinkId = OLinkId;
 
         RegisterForm.TermsConditionsUrl = domainSettingService.GetTermsConditionsLink(languageCode);
         RegisterForm.IsTurnstileCaptchaEnabled = landingPage.IsTurnstileCaptchaEnabled;
@@ -344,7 +344,7 @@ public class LandingPageModel(
         registerForm.UserPwd = registerForm.Password;
         registerForm.ClickId = ClickId ?? string.Empty;
         registerForm.OClickId = OClickId ?? string.Empty;
-        registerForm.OLinkId = OLinkId ?? string.Empty;
+        registerForm.OLinkId = OLinkId;
         registerForm.AffCode = registerForm.HasIdCode ? null : registerForm.AffCode;
         registerForm.ReferralUrl = GetReferralHeader();
         registerForm.UserAgent = GetRequestHeader(LandingPageConstants.UserAgentHeader);
