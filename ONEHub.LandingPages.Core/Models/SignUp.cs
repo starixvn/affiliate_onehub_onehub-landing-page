@@ -14,7 +14,7 @@ public class SignUp
     public string? AffCode { get; set; }
     public string? IdCode { get; set; }
     public string IdCodeClickId { get; set; } = string.Empty;
-    public int? IdCodeLinkId { get; set; }
+    public int IdCodeLinkId { get; set; }
     public string AffClickId { get; set; } = string.Empty;
     public string ReferralUrl { get; set; } = string.Empty;
 }
