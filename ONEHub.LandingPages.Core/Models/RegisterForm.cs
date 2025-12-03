@@ -43,7 +43,7 @@ public class RegisterForm
 
     [Required(ErrorMessageResourceName = "Validation_Capcha", ErrorMessageResourceType = typeof(UI))]
     public string ReCaptchaToken { get; set; } = string.Empty;
-    public string ClickId { get; set; } = string.Empty;
+    public string AffClickId { get; set; } = string.Empty;
     public string AffMediaLinkId { get; set; } = string.Empty;
     public string SignUpUrl { get; set; } = string.Empty;
     public string ReferralUrl { get; set; } = string.Empty;

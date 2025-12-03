@@ -277,7 +277,7 @@ public class SignUpService(ILogProvider logService,
             IdCodeLinkId = registerForm.OLinkId ?? 0,
             CaptchaType = registerForm.CaptchaType,
             ReCaptchaToken = registerForm.ReCaptchaToken,
-            AffClickId = registerForm.ClickId,
+            AffClickId = registerForm.AffClickId,
             ReferralUrl = registerForm.ReferralUrl,
             UserLang = registerForm.UserLang
         };

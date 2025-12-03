@@ -198,7 +198,7 @@ public class LandingPageModel(
         RegisterForm.AreaCode = $"+{landingPage.DialCode}";
         RegisterForm.CountryCode = landingPage.TargetCountryCode;
         RegisterForm.CurrencyId = landingPage.CurrencyId;
-        RegisterForm.ClickId = ClickId ?? string.Empty;
+        RegisterForm.AffClickId = ClickId ?? string.Empty;
         RegisterForm.IdCode = IdCode ?? string.Empty;
         RegisterForm.AffCode = RegisterForm.HasIdCode ? RegisterForm.IdCode : (AffCode ?? string.Empty);
         RegisterForm.OClickId = OClickId ?? string.Empty;
@@ -342,7 +342,7 @@ public class LandingPageModel(
     private RegisterForm ProcessDataSubmitForm(RegisterForm registerForm)
     {
         registerForm.UserPwd = registerForm.Password;
-        registerForm.ClickId = ClickId ?? string.Empty;
+        registerForm.AffClickId = ClickId ?? string.Empty;
         registerForm.OClickId = OClickId ?? string.Empty;
         registerForm.OLinkId = OLinkId;
         registerForm.AffCode = registerForm.HasIdCode ? null : registerForm.AffCode;
